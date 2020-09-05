@@ -49,18 +49,17 @@
       <nav class="nav-menu d-none d-lg-block">
 
         <ul>
-        
           <li><a href="index.html">Inicio</a></li>
-
         </ul>
 
       </nav><!-- .nav-menu -->
 
-      
-
     </div>
   </header><!-- End Header -->
 
+
+
+  
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -68,7 +67,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Bienvenido! En que podemos ayudarle?</h2>
+          <h2>Bienvenido! Ingresas tus credenciales para acceder!</h2>
           <ol>
             <li><a href="index.html">Inicio</a></li>
             <li>Contactenos</li>
@@ -90,24 +89,7 @@
 
           <div class="col-lg-4">
             <div class="info">
-              <div class="address">
-                <i class="icofont-google-map"></i>
-                <h4>Direccion:</h4>
-                <p>*Direccion de la oficina*</p>
-              </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4>Correo Electronico:</h4>
-                <p>asotarsochiqui@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="icofont-phone"></i>
-                <h4>Telefono de Oficina:</h4>
-                <p>(+502)78526532</p>
-              </div>
-
+        
             </div>
 
           </div>
@@ -116,29 +98,24 @@
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="customer_name" class="form-control" id="name" placeholder="Nombre Completo" data-rule="minlen:4" data-msg="Por favor ingrese su nombre..." />
+                <div class="col-md-4 form-group">
+                  <div class="address">
+                <h4>Usuario:</h4>
+                  </div>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre de Usuario" data-rule="minlen:4" data-msg="Ingrese su Usuario..." />
                   <div class="validate"></div>
                 </div>
-                <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="customer_email" id="email" placeholder="Correo Electronico" data-rule="email" data-msg="Por favor ingrese un correo electronico valido..." />
-                  <div class="validate"></div>
-                </div>
+              
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor ingrese el motivo de su mensaje..." />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="" rows="5" data-rule="required" data-msg="Por favor escriba su mensaje...." placeholder="Mensaje/Consulta/Queja"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Cargando...</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Mensaje Enviado! Gracias por tu escribirnos!</div>
-              </div>
-              <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
+              <div class="form-row" >
+              <div class="col-md-4 form-group">
+                 <div class="email">
+                <h4>Contraseña:</h4>
+                  </div>
+                <input type="password" name="pass"  class="form-control" id="pass" name="subject" id="subject" placeholder="Contraseña" data-rule="minlen:4" data-msg="Ingrese su Contraseña"/><br>
+                 <div class="text-center"><button type="submit">Ingresar</button></div>
+                 </div>
+                 </div>
             </form>
 
           </div>
@@ -201,27 +178,6 @@
       </div>
     </div>
 
-    <?php
-      if (isset($_POST['send'])){
-        include("sendemail.php");//Mando a llamar la funcion que se encarga de enviar el correo electronico
-        
-        /*Configuracion de variables para enviar el correo*/
-        $mail_username="notifyasotarsochiqui@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
-        $mail_userpassword="notify123";//Tu contraseña de gmail
-        $mail_addAddress="casotarso@gmail.com";//correo electronico que recibira el mensaje
-        $template="email_template.html";//Ruta de la plantilla HTML para enviar nuestro mensaje
-        
-        /*Inicio captura de datos enviados por $_POST para enviar el correo */
-        $mail_setFromEmail=$_POST['customer_email'];
-        $mail_setFromName=$_POST['customer_name'];
-        $txt_message=$_POST['message'];
-        $mail_subject=$_POST['subject'];
-        
-        sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_setFromName,$mail_addAddress,$txt_message,$mail_subject,$template);//Enviar el mensaje
-      }
-    ?>
-
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Asotarso Chiquimulilla / 2020</span></strong>. Todos los derechos Reservados
@@ -252,5 +208,3 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
-</html>
