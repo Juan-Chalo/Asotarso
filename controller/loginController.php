@@ -9,7 +9,7 @@ $conexion = $objeto->Conectar();
           //recepcion de los datos enviados mediante el metodo post desde Ajax
 
           $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
-          $password = (sha1($_POST['password'])); 
+          $password = (shal($_POST['password']));
 
           //incriptacion para la clave MD5. 
           //MD5 es un algoritmo criptografico, usa una codificacion de 128 bits y se presenta como 32 simbolos decimales

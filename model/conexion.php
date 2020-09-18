@@ -7,8 +7,8 @@
 
         # Atributos de la clase conexion
         private $mysqli = '';
-        private $usuario = 'root';
-        private $clave = '';
+        private $usuario = 'asotarsochiqui';
+        private $clave = 'asotarsoChiqui20!';
         private $server = 'localhost';
         private $db = 'asotarsochiqui';
 
