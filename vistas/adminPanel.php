@@ -80,7 +80,7 @@ if($_SESSION["usuario"] === null)
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html">ASOTARSO CHIQUIMULILLA S.R</a>
+                <a class="navbar-brand" href="adminPanel.php">ASOTARSO CHIQUIMULILLA S.R</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -113,15 +113,15 @@ if($_SESSION["usuario"] === null)
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="images/TAXI.jpg" width="48" height="48" alt="User" />
+                    <img src=" ../images/TAXI.jpg" width="48" height="48" alt="User" />
                 </div>
-                <div class="info-container">Administrador
+                <div class="info-container"><h4><?php echo ($_SESSION["usuario"]); ?></h4>
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li role="separator" class="divider"></li>
-                            <li><a href="controller/cerrarSesion.php"><i class="material-icons">input</i>Cerrar Sesion</a></li>
+                            <li><a href=" ../controller/cerrarSesion.php"><i class="material-icons">input</i>Cerrar Sesion</a></li>
                         </ul>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ if($_SESSION["usuario"] === null)
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="usuarios.php">
                             <i class="material-icons">assignment</i>
                             <span>Gestion de Usuarios</span>
                         </a>

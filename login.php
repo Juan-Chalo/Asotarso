@@ -1,18 +1,11 @@
 <?php
 
-  /*
-    En ocasiones el usuario puede volver al login
-    aun si ya existe una sesion iniciada, lo correcto
-    es no mostrar otra ves el login sino redireccionarlo
-    a su pagina principal mientras exista una sesion entonces
-    creamos un archivo que controle el redireccionamiento
-  */
 
   session_start();
 
   // isset verifica si existe una variable o eso creo xd
-  if(isset($_SESSION['id'])){
-    header('location: controller/redirec.php');
+  if(isset($_SESSION["usuario"])){
+    header('location: ../index.html');
   }
 
 ?>
@@ -44,6 +37,10 @@
     <link rel="stylesheet" href="Logincss/sweetalert.css">
     <!-- Estilos personalizados: archivo personalizado 100% real no feik -->
     <link rel="stylesheet" href="Logincss/style.css">
+
+     <!-- SWEETALERT2 --->
+
+  <link rel="stylesheet"  href="plugins/sweetalert2/sweetalert2.min.css">
 
 
 
@@ -128,13 +125,14 @@
           <!-- Estructura del formulario -->
           <fieldset>
 
-            <legend class="center">Login</legend>
+            <legend class="center">Iniciar Sesion</legend>
 
             <!-- Caja de texto para usuario -->
+              <form id="formLogin" action="" method="POST">
             <label  for="user">Usuario</label>
             <div class="input-group">
              
-              <input type="text" class="form-control" id="user" placeholder="Ingresa tu usuario">
+              <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingresa tu usuario">
             </div>
 
             <!-- Div espaciador -->
@@ -144,27 +142,18 @@
             <label class="sr-only" for="clave">Contraseña</label>
             <div class="input-group">
         
-              <input type="password" autocomplete="off" class="form-control" id="clave" placeholder="Ingresa tu Contraseña">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu Contraseña">
             </div>
-
-            <!-- Animacion de load (solo sera visible cuando el cliente espere una respuesta del servidor )-->
-            <div class="row" id="load" hidden="hidden">
-              <div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-5">
-                <img src="images/load.gif" width="100%" alt="">
-              </div>
-              <div class="col-xs-12 center text-accent">
-                <span>Validando información...</span>
-              </div>
-            </div>
-            <!-- Fin load -->
 
             <!-- boton #login para activar la funcion click y enviar el los datos mediante ajax -->
             <div class="row">
               <div class="col-xs-8 col-xs-offset-2">
                 <div class="spacing-2"></div>
-                <button type="button" class="btn btn-primary btn-block" name="button" id="login">Iniciar sesion</button>
+                <input class="btn btn-primary btn-lg btn-block" name="Ingresar" type="submit" value="Ingresar!">
               </div>
             </div>
+
+          </form>
 
            
 
@@ -179,6 +168,8 @@
     </section> <!-- End Contact Section -->
 
   </main><!-- End #main -->
+
+  <br><br><br><br><br><br>
 
   
   <!-- ======= Footer ======= -->
@@ -271,6 +262,10 @@
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!--SWEETALERT2 -->
+  <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="CodigoLogin.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

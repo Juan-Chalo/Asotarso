@@ -1,39 +1,56 @@
 <?php
 
-  # Leemos las variables enviadas mediante Ajax
-  $user = $_POST['user_php'];
-  $clave = $_POST['clave_php'];
+session_start();
 
-  # Verificamos que los campos no esten vacios, el chiste de este if es que si almenos una variable (o campo) esta vacio mostrara error_1
-  if(empty($user) || empty($clave)){
+include_once 'conexionBd.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
 
-    # mostramos la respuesta de php (echo)
-    echo 'error_1';
+          //recepcion de los datos enviados mediante el metodo post desde Ajax
 
-  }else{
+          $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
+          $password = (sha1($_POST['password'])); 
 
-    /*
-       Si tu usuario require de una validacion de email,
-       es decir que contenga @ y .com, .es etc.
-       habilita las lineas 21, 32, 33 y 34
-    */
+          //incriptacion para la clave MD5. 
+          //MD5 es un algoritmo criptografico, usa una codificacion de 128 bits y se presenta como 32 simbolos decimales
 
-    // if(filter_var($user, FILTER_VALIDATE_EMAIL)){
+          $pass =md5($password); //incripto la clave enviada por el usuario, para comparrarla con la clave encriptada y almacenada en la bd. 
 
-    # Incluimos la clase usuario
-    require_once('../model/usuario.php');
+           $consulta1 = "SELECT * FROM usuarios WHERE nombreusuario='$usuario' AND password='$password' AND rolusuario_idrolusuario= 1 AND Estado_idEstado=1";
+          $resultado1 = $conexion->prepare($consulta1);
+          $resultado1->execute();
 
-    # Creamos un objeto de la clase usuario
-    $usuario = new Usuario();
+           $consulta2 = "SELECT * FROM usuarios WHERE nombreusuario='$usuario' AND password='$password' AND rolusuario_idrolusuario= 2 AND Estado_idEstado=1";
+          $resultado2 = $conexion->prepare($consulta2);
+          $resultado2->execute();
 
-    # Llamamos al metodo login para validar los datos en la base de datos
-    $usuario -> login($user, $clave);
+          if ($resultado1->rowCount()>=1) {
+            $data = 1;
 
-    /*}else{
-      echo 'error_2';
-    }*/
+            //VARIABLES DE SESION
+            $_SESSION["usuario"]=$usuario;
+            
+          }
+           
+           elseif ($resultado2->rowCount()>=1) {
+            $data = 2;
 
-  }
+            //VARIABLES DE SESION
+            $_SESSION["usuario"]=$usuario;
+            
+          }else{
+
+            $_SESSION["usuario"] = null;
+            $data=3;
+
+          }
+
+          print json_encode($data);
+
+          $conexion=null;   
+
+           
 
 
+/*  WHERE nombre='$usuario' AND password='$password' AND Rol_usuario_id_rol_usuario=1 */
 ?>

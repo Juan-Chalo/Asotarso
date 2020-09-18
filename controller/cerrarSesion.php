@@ -2,11 +2,10 @@
 
   // Eliminamos la sesion
 
-
-    session_start ();
-  unset($_SESSION['nombre']);
+	session_start ();
+  unset($_SESSION["usuario"]);
   session_destroy();           
-  header("Location:../login.php");
+  header("Location: ../index.html");
 
 
 ?>
