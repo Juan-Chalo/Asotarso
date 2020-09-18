@@ -10,7 +10,7 @@ $conexion = $objeto->Conectar();
 
           $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
           $password = (sha1($_POST['password'])); 
-        
+
 
           //incriptacion para la clave MD5. 
           
@@ -53,4 +53,7 @@ $conexion = $objeto->Conectar();
            
 
 
+
 ?>
+
+
