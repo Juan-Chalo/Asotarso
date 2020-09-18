@@ -10,11 +10,12 @@ $conexion = $objeto->Conectar();
 
           $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
           $password = (sha1($_POST['password'])); 
+        
 
           //incriptacion para la clave MD5. 
-          //MD5 es un algoritmo criptografico, usa una codificacion de 128 bits y se presenta como 32 simbolos decimales
+          
 
-          $pass =md5($password); //incripto la clave enviada por el usuario, para comparrarla con la clave encriptada y almacenada en la bd. 
+          //$pass =md5($password); //incripto la clave enviada por el usuario, para comparrarla con la clave encriptada y almacenada en la bd. 
 
            $consulta1 = "SELECT * FROM usuarios WHERE nombreusuario='$usuario' AND password='$password' AND rolusuario_idrolusuario= 1 AND Estado_idEstado=1";
           $resultado1 = $conexion->prepare($consulta1);
@@ -52,5 +53,4 @@ $conexion = $objeto->Conectar();
            
 
 
-/*  WHERE nombre='$usuario' AND password='$password' AND Rol_usuario_id_rol_usuario=1 */
 ?>
