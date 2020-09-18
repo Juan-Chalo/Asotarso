@@ -3,9 +3,9 @@
 
 
                  <?php
-						include ("../controladores/clasesControladores.php");
+						include ("../Controladores/clasesControladores.php");
 						$usuarios= new DatosUsuario();
-                        
+
 						if(isset($_POST) && !empty($_POST)){
 							$nombres = $usuarios->sanitize($_POST['nombreusuario']);
 							$password = $usuarios->sanitize(sha1($_POST['password']));
