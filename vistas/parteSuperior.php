@@ -17,7 +17,7 @@ if($_SESSION["usuario"] === null)
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>AsotarsoChiqui | Administracion</title>
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+     <link href=" ../assets/img/iconotaxi.ico" rel="icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -146,10 +146,10 @@ if($_SESSION["usuario"] === null)
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="#">Cuotas Mensuales</a>
+                                        <a href="agregarMultaMes.php">Cuotas Mensuales</a>
                                     </li>
                                     <li>
-                                        <a href="#">Multas Organiacion</a>
+                                        <a href="agregarMultaOrganizacion.php">Multas Organiacion</a>
                                     </li>
                                 </ul>
                             </li>

@@ -1,5 +1,14 @@
+<?php
+session_start ();
+
+if($_SESSION["usuario"] === null)
+  header("Location: index.html");
+
+
+?>
 <?php require_once "parteSuperior.php"?>
  <section class="content">
+    <div class="container-fluid">
 
 
                  <?php
@@ -109,6 +118,6 @@
 
 
 
-
+</div>
 </section>
 <?php require_once "parteInferior.php"?>

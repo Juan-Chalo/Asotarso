@@ -6,8 +6,6 @@ if($_SESSION["usuario"] === null)
 
 
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +15,8 @@ if($_SESSION["usuario"] === null)
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>AsotarsoChiqui | Administracion</title>
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+     <link href=" ../assets/img/iconotaxi.ico" rel="icon">
+    
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -132,7 +131,7 @@ if($_SESSION["usuario"] === null)
                 <ul class="list">
                     <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active">
-                        <a href="index.html">
+                        <a href="adminPanel.php">
                             <i class="material-icons">home</i>
                             <span>INICIO</span>
                         </a>
@@ -155,10 +154,10 @@ if($_SESSION["usuario"] === null)
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="#">Cuotas Mensuales</a>
+                                        <a href="agregarMultaMes.php">Cuotas Mensuales</a>
                                     </li>
                                     <li>
-                                        <a href="#">Multas Organiacion</a>
+                                        <a href="agregarMultaOrganizacion.php">Multas Organiacion</a>
                                     </li>
                                 </ul>
                             </li>
@@ -402,19 +401,8 @@ if($_SESSION["usuario"] === null)
                             <i class="material-icons">playlist_add_check</i>
                         </div>
                         <div class="content">
-                            <div class="text">NEW TASKS</div>
+                            <div class="text">Reportes Ingresados</div>
                             <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-cyan hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">help</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">NEW TICKETS</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -424,7 +412,7 @@ if($_SESSION["usuario"] === null)
                             <i class="material-icons">forum</i>
                         </div>
                         <div class="content">
-                            <div class="text">NEW COMMENTS</div>
+                            <div class="text">Comentarios/Quejas</div>
                             <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
@@ -435,7 +423,7 @@ if($_SESSION["usuario"] === null)
                             <i class="material-icons">person_add</i>
                         </div>
                         <div class="content">
-                            <div class="text">NEW VISITORS</div>
+                            <div class="text">Usuarios Agregados</div>
                             <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
@@ -741,6 +729,17 @@ if($_SESSION["usuario"] === null)
 
     <!-- Demo Js -->
     <script src=" ../js/demo.js"></script>
+    
+    <!-- Jquery DataTable Plugin Js -->
+    <script src=" ../plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src=" ../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src=" ../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src=" ../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src=" ../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src=" ../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src=" ../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src=" ../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src=" ../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 </body>
 
 </html>

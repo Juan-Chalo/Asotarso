@@ -4,7 +4,6 @@
     <!-- Bootstrap Core Js -->
     <script src=" ../plugins/bootstrap/js/bootstrap.js"></script>
 
-
     <!-- Slimscroll Plugin Js -->
     <script src=" ../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
@@ -33,9 +32,8 @@
     <script src="../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 
     <!-- Custom Js -->
-    <script src="../js/admin.js"></script>
-    <script src="../js/pages/tables/jquery-datatable.js"></script>
-
+    <script src=" ../js/admin.js"></script>
+    <script src=" ../js/pages/tables/jquery-datatable.js"></script>
 
     <!-- Flot Charts Plugin Js -->
     <script src=" ../plugins/flot-charts/jquery.flot.js"></script>
@@ -48,10 +46,7 @@
     <script src=" ../plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
     <!-- Custom Js -->
-    <script src=" ../js/admin.js"></script>
     <script src=" ../js/pages/index.js"></script>
-
-
     <!-- Demo Js -->
     <script src=" ../js/demo.js"></script>
 </body>

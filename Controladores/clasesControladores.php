@@ -50,7 +50,7 @@
 		//Metodo para Crear USUARIO nuevo
 
 			public function crearUsuario($nombres,$password,$rol,$estado){
-			$sql = "INSERT INTO `usuarios` (nombreusuario, password, rolusuario_idrolusuario, Estado_idEstado) VALUES ('$nombres', '$password', '$rol', $estado)";
+			$sql = "INSERT INTO `usuarios` (nombreusuario, password, rolusuario_idrolusuario, Estado_idEstado) VALUES ('$nombres', '$password', '$rol', '$estado')";
 			$res = mysqli_query($this->con, $sql);
 			if($res){
 				return true;
@@ -107,6 +107,8 @@
 
 
 
+
+ 
 
 
 
