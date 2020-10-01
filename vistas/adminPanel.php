@@ -185,7 +185,7 @@ if($_SESSION["usuario"] === null)
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="circularessocios.php">
                             <i class="material-icons">map</i>
                             <span>Circulares Socios</span>
                         </a>
