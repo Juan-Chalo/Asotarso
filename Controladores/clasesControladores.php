@@ -201,12 +201,142 @@
 
 
 
+  /**
+   * 
+   */
+  class Circulares
+  {
+
+  	private $con;
+		private $dbhost="localhost";
+		private $dbuser="asotarsochiqui";
+		private $dbpass="asotarsoChiqui20!";
+		private $dbname="asotarsochiqui";
+		function __construct(){
+			$this->connect_db();
+		}
+		public function connect_db(){
+			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+			if(mysqli_connect_error()){
+				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+			}
+		}
+
+		public function sanitize($var){
+			$return = mysqli_real_escape_string($this->con, $var);
+			return $return;
+		}
+
+			public function agregarCircular($asunto,$descripcion,$fecha,$lugar,$estado){
+			$sql = "INSERT INTO `actividadessocio` (asunto, DescripcionActividades, FechaActividad, LugarActividad, Estado_idEstado) VALUES ('$asunto', '$descripcion', '$fecha', '$lugar', '$estado')";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		}
+  	
+  	
+  }
+
+
+  /**
+   * No heredad de
+   */
+  class GestionSocios
+
+  {
+  	private $con;
+		private $dbhost="localhost";
+		private $dbuser="asotarsochiqui";
+		private $dbpass="asotarsoChiqui20!";
+		private $dbname="asotarsochiqui";
+		function __construct(){
+			$this->connect_db();
+		}
+		public function connect_db(){
+			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+			if(mysqli_connect_error()){
+				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+			}
+		}
+
+		public function sanitize($var){
+			$return = mysqli_real_escape_string($this->con, $var);
+			return $return;
+		}
+
+		//Metodo para Crear Socio nuevo
+
+			public function AgregarSocio($NombreSocio,$ApellidoSocio,$TelefonoSocios,$DireccionSocios,$CorreoElectronico,$Estado_idEstado){
+			$sql = "INSERT INTO `socios` (NombreSocio, ApellidosSocio, TelefonoSocios, DireccionSocios, CorreoElectronico, Estado_idEstado) VALUES ('$NombreSocio', '$ApellidoSocio', '$TelefonoSocios', '$DireccionSocios', '$CorreoElectronico', '$Estado_idEstado')";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
 
 
 
- 
+  	
+  
+  	
+  }
+
+}
+
+/**
+ * 
+ */
+class finanzasSocios
+	{
+		private $con;
+		private $dbhost="localhost";
+		private $dbuser="asotarsochiqui";
+		private $dbpass="asotarsoChiqui20!";
+		private $dbname="asotarsochiqui";
+		function __construct(){
+			$this->connect_db();
+		}
+		public function connect_db(){
+			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+			if(mysqli_connect_error()){
+				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+			}
+		}
+
+		public function sanitize($var){
+			$return = mysqli_real_escape_string($this->con, $var);
+			return $return;
+		}
+
+		//metodo de lectura 
+
+		public function verFinanzasSocios(){
+			$sql = "SELECT * FROM reporte WHERE Estado_idEstado=1";
+			$res = mysqli_query($this->con, $sql);
+			return $res;
+		}
 
 
+
+			public function borrarReporteSocios($id){
+			$sql = "UPDATE reporte SET Estado_idEstado = 2 WHERE idReporteFinanciero=$id";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		
+	}
+
+
+	
+}
+	
 
 
 
