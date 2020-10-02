@@ -101,7 +101,7 @@ if($_SESSION["usuario"] === null)
 
                 				   <br>
                                 <button type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar Circular</button><br><br>
-                                <a href="usuarios.php" class="btn btn-danger waves-effect">Cancelar</a>
+                                <a href="AdminPanel.php" class="btn btn-danger waves-effect">Cancelar</a>
                             </form>
                         </div>
                     </div>

@@ -167,17 +167,35 @@ if($_SESSION["usuario"] === null)
                     </li>
                    
                      <li>
-                        <a href="#">
+                        <a href="gestionSocios.php">
                             <i class="material-icons">assignment</i>
                             <span>Gestion de Socios</span>
                         </a>
                     </li>
                    <li>
-                        <a href="#">
-                            <i class="material-icons">assignment</i>
-                            <span>Gestion de Directiva</span>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">trending_down</i>
+                            <span>Reportes Financieros</span>
                         </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <span>Socios/Directiva</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="finanzasSocios.php">Reporte Financieros Socios</a>
+                                    </li>
+                                    <li>
+                                        <a href="finanzasDirectiva.php">Reporte Financieros Directiva</a>
+                                    </li>
+                                </ul>
+                            </li>
+                    
+                             
+                        </ul>
                     </li>
+                   
                    <li>
                         <a href="#">
                             <i class="material-icons">pie_chart</i>
