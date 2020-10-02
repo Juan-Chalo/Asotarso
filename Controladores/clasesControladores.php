@@ -11,8 +11,8 @@
  	
  		private $con;
 		private $dbhost="localhost";
-		private $dbuser="asotarsochiqui";
-		private $dbpass="asotarsoChiqui20!";
+		private $dbuser="asotarsochiqui";//asotarsochiqui root
+		private $dbpass="asotarsoChiqui20!"; //
 		private $dbname="asotarsochiqui";
 		function __construct(){
 			$this->connect_db();
@@ -100,6 +100,102 @@
 		
  }
 
+//CONTROLADOR GESTION DE Producto 
+
+
+ /**
+  * 
+  */
+ class Producto
+{
+
+ 		private $con;
+		private $dbhost="localhost";
+		private $dbuser="root";//asotarsochiqui
+		private $dbpass=""; //asotarsoChiqui20!
+		private $dbname="asotarsochiqui";
+		function __construct(){
+			$this->connect_db();
+		}
+		public function connect_db(){
+			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+			if(mysqli_connect_error()){
+				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+			}
+		}
+
+		public function sanitize($var){
+			$return = mysqli_real_escape_string($this->con, $var);
+			return $return;
+		}
+
+
+//Metodo para agregar un nuevo Producto 
+
+			public function agregarProducto($codigo, $nameProducto, $precio, $existencia, $rolCategoria, $estado){
+			$sql = "INSERT INTO `producto` (codigo , nombreProducto , precioProducto , Existencia, CategoriaProducto_idCategoriaProducto , Estado_idEstado) VALUES ('$codigo', '$nameProducto', '$precio', '$existencia' , '$rolCategoria' ,'$estado')";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+
+//metodo de lectura de producto 
+
+		public function leerProducto(){
+			$sql = "SELECT * FROM producto WHERE Estado_idEstado=1";
+			$res = mysqli_query($this->con, $sql);
+			return $res;
+		}
+
+
+			public function single_record($id){
+			$sql = "SELECT * FROM producto where idProducto='$id'";
+			$res = mysqli_query($this->con, $sql);
+			$return = mysqli_fetch_object($res );
+			return $return ;
+		}
+
+//Metodo para Actualizar el producto 
+
+		public function actualizarProducto($codigo, $nameProducto,  $precio, $cantidad, $id_productos){
+			$sql = "UPDATE producto SET codigo='$codigo', nombreProducto ='$nameProducto', 
+			precioProducto='$precio', Existencia='$cantidad' WHERE idProducto=$id_productos";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+//Metodo para ELIMINAR Producto
+
+			public function borrarProducto($id){
+			$sql = "UPDATE producto SET Estado_idEstado = 2 WHERE idProducto=$id";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+
+
+
+
+
+
+}
+
+
+
+
+ // $connect = mysqli_connect("localhost","root","","asotarsochiqui");
 
   $connect = mysqli_connect("localhost","asotarsochiqui","asotarsoChiqui20!","asotarsochiqui");
 

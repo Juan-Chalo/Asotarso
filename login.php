@@ -1,14 +1,12 @@
 <?php
+session_start();
 
-
-  session_start();
-
-  // isset verifica si existe una variable o eso creo xd
+  
   if(isset($_SESSION["usuario"])){
     header('location: ../index.html');
   }
 
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 

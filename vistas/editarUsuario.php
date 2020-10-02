@@ -2,7 +2,7 @@
  <section class="content">
 
 
-                  <?php
+                <?php
                  if (isset($_GET['id'])){
                     $id=intval($_GET['id']);
                     }
@@ -26,7 +26,7 @@
                     <?php
                 }
                 $datos_usuario=$usuarios->single_record($id);
-            ?>
+            ?> -->
 
 
  		<!-- Vertical Layout -->

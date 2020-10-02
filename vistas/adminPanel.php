@@ -210,10 +210,10 @@ if($_SESSION["usuario"] === null)
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="#">Lista de Repuestos</a>
+                                        <a href="mostrarProducto.php">Lista de Repuestos</a>
                                     </li>
                                     <li>
-                                        <a href="#">Agregar Repuesto</a>
+                                        <a href="agregarProducto.php">Agregar Repuesto</a>
                                     </li>
                                 </ul>
                             </li>
