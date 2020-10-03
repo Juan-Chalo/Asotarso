@@ -159,7 +159,7 @@ if($_SESSION["usuario"] === null)
                     </li>
                    
                      <li>
-                        <a href="#">
+                        <a href="gestionSocios.php">
                             <i class="material-icons">assignment</i>
                             <span>Gestion de Socios</span>
                         </a>

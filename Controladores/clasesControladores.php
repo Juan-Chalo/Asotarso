@@ -332,9 +332,57 @@ class finanzasSocios
 			}
 		
 	}
-
-
 	
+}
+
+/**
+ * 
+ */
+class finanzasDirectiva
+	{
+		private $con;
+		private $dbhost="localhost";
+		private $dbuser="asotarsochiqui";
+		private $dbpass="asotarsoChiqui20!";
+		private $dbname="asotarsochiqui";
+		function __construct(){
+			$this->connect_db();
+		}
+		public function connect_db(){
+			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+			if(mysqli_connect_error()){
+				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+			}
+		}
+
+		public function sanitize($var){
+			$return = mysqli_real_escape_string($this->con, $var);
+			return $return;
+		}
+
+		//metodo lectura
+
+		public function verFinanzasDirectiva(){
+			$sql = "SELECT * FROM reporte_directiva WHERE Estado_idEstado=1";
+			$res = mysqli_query($this->con, $sql);
+			return $res;
+		}
+
+
+
+			public function borrarReporteDirectiva($id){
+			$sql = "UPDATE reporte_directiva SET Estado_idEstado = 2 WHERE idReporteFinanciero=$id";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+
+
+	}
+
+
 }
 	
 

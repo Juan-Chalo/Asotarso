@@ -9,7 +9,7 @@ $conexion = $objeto->Conectar();
           //recepcion de los datos enviados mediante el metodo post desde Ajax
 
           $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
-          $password = ($_POST['password']); 
+          $password = (sha1($_POST['password'])); 
 
 
           //incriptacion para la clave MD5. 
