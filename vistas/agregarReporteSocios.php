@@ -105,7 +105,7 @@ if($_SESSION["usuario"] === null)
 
                 				   <br>
                                 <input type="submit" name="Submit" class="btn btn-primary m-t-15 waves-effect" value="Agregar Reporte"><br><br>
-                                <a href="adminPanel.php" class="btn btn-danger waves-effect">Cancelar</a>
+                                <a href="finanzasSocios.php" class="btn btn-danger waves-effect">Cancelar</a>
                             </form>
                         </div>
                     </div>
