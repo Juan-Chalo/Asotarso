@@ -5,8 +5,8 @@
          public static function Conectar(){
          	define('servidor','localhost');
          	define('nombre_db','asotarsochiqui');
-         	define('usuario','root'); // asotarsochiqui 
-         	define('password',''); //asotarsoChiqui20!
+         	define('usuario','asotarsochiqui'); // asotarsochiqui 
+         	define('password','asotarsoChiqui20!'); //asotarsoChiqui20!
          	$opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND =>'SET NAMES utf8'); //es un comando que se reconecta al servidor sql.  
 
          	try{
