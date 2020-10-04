@@ -371,7 +371,7 @@ class finanzasDirectiva
 
 
 			public function borrarReporteDirectiva($id){
-			$sql = "UPDATE reporte_directiva SET Estado_idEstado = 2 WHERE idReporteFinanciero=$id";
+			$sql = "UPDATE reporte_directiva SET Estado_idEstado = 2 WHERE idReporteDirectiva=$id";
 			$res = mysqli_query($this->con, $sql);
 			if($res){
 				return true;
