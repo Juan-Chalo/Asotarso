@@ -111,8 +111,8 @@
 
  		private $con;
 		private $dbhost="localhost";
-		private $dbuser="root";//asotarsochiqui
-		private $dbpass=""; //asotarsoChiqui20!
+		private $dbuser="asotarsochiqui";//asotarsochiqui
+		private $dbpass="asotarsoChiqui20!"; //asotarsoChiqui20!
 		private $dbname="asotarsochiqui";
 		function __construct(){
 			$this->connect_db();
