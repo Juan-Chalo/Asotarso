@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-  
+
   if(isset($_SESSION["usuario"])){
     header('location: index.html');
   }
 
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +43,7 @@ session_start();
 
 
 
-    
+
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@ session_start();
 
 
 
-  
+
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -98,7 +98,7 @@ session_start();
           <h2>Bienvenido! Ingresas tus credenciales para acceder!</h2>
           <ol>
             <li><a href="index.html">Inicio</a></li>
-            <li>Contactenos</li>
+            <li>Iniciar Sesion</li>
           </ol>
         </div>
 
@@ -129,7 +129,7 @@ session_start();
               <form id="formLogin" action="" method="POST">
             <label  for="user">Usuario</label>
             <div class="input-group">
-             
+
               <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingresa tu usuario">
             </div>
 
@@ -139,7 +139,7 @@ session_start();
             <!-- Caja de texto para la clave-->
             <label class="sr-only" for="clave">Contraseña</label>
             <div class="input-group">
-        
+
               <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu Contraseña">
             </div>
 
@@ -153,7 +153,7 @@ session_start();
 
           </form>
 
-           
+
 
           </fieldset>
         </div>
@@ -169,7 +169,7 @@ session_start();
 
   <br><br><br><br><br><br>
 
-  
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">

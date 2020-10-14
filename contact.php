@@ -208,15 +208,6 @@
                 <br>
                 <strong>Sabados y domingos:</strong><br> 7:00-16:00 horas<br>
               </p>
-
-
-
-
-
-
-
-
-
            <!-- <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
@@ -229,27 +220,6 @@
         </div>
       </div>
     </div>
-    <?php
-      if (isset($_POST['send'])){
-        include("sendemail.php");//Mando a llamar la funcion que se encarga de enviar el correo electronico
-
-        /*Configuracion de variables para enviar el correo*/
-        $mail_username="notifyasotarsochiqui@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
-        $mail_userpassword="notify123";//Tu contraseña de gmail
-        $mail_addAddress="casotarso@gmail.com";//correo electronico que recibira el mensaje
-        $template="email_template.html";//Ruta de la plantilla HTML para enviar nuestro mensaje
-
-        /*Inicio captura de datos enviados por $_POST para enviar el correo */
-        $mail_setFromEmail=$_POST['customer_email'];
-        $mail_setFromName=$_POST['customer_name'];
-        $txt_message=$_POST['message'];
-        $mail_subject=$_POST['subject'];
-
-        sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_setFromName,$mail_addAddress,$txt_message,$mail_subject,$template);//Enviar el mensaje
-      }
-    ?>
-
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Asotarso Chiquimulilla / 2020</span></strong>. Todos los derechos Reservados
@@ -276,8 +246,21 @@
   <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 
+  <!--SWEETALERT2 -->
+  <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="CodigoLogin.js"></script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Jquery  LOGIN -->
+    <script src="Loginjs/jquery.js"></script>
+    <!-- Bootstrap js -->
+    <script src="Loginjs/bootstrap.min.js"></script>
+    <!-- SweetAlert js -->
+    <script src="Loginjs/sweetalert.min.js"></script>
+    <!-- Js personalizado -->
+    <script src="Loginjs/operaciones.js"></script>
 
 </body>
 
