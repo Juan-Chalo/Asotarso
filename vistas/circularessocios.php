@@ -21,16 +21,17 @@ if($_SESSION["usuario"] === null)
 							$fecha = $circulares->sanitize($_POST['Fecha']);
                             $lugar = $circulares->sanitize($_POST['Lugar']);
 							$estado = $circulares->sanitize($_POST['estado']);
-							
-							$res = $circulares->agregarCircular($asunto, $descripcion, $fecha, $lugar, $estado);
+              $hora = $circulares->sanitize($_POST['hora']);
+
+							$res = $circulares->agregarCircular($asunto, $descripcion, $fecha, $lugar, $hora, $estado);
 							if($res){
 								echo "<div class='alert alert-success' role='alert'>Circular enviada!</div>";
 							}else{
 								echo "<div class='alert alert-danger' role='alert'>Error al enviar Circular :(</div>";
 							}
-							
+
 						}
-	
+
 				?>
 
 
@@ -56,14 +57,14 @@ if($_SESSION["usuario"] === null)
                                 <div class="form-group">
                                     <div class="form-line">
                                         <textarea id="Descripción" name="Descripción" class="form-control" placeholder="Ingrese La Descripción de la actividad"></textarea>
-                                       
+
                                     </div>
                                 </div>
 
                                 <label for="email_address">Ingrese la Fecha para la actividad</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Dia/Mes/Año">
+                                        <input type="date" id="Fecha" name="Fecha" class="form-control">
                                     </div>
                                 </div>
 
@@ -74,30 +75,37 @@ if($_SESSION["usuario"] === null)
                                     </div>
                                 </div>
 
+                                <label for="email_address">Hora</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="hora" name="hora" class="form-control" placeholder="Ingrese la hora de inicio de la Actividad">
+                                    </div>
+                                </div>
+
                                  <label for="password">Estado de la Circular</label>
                                <div class="body">
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                     <?php
-                                         $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado"); 
+                                         $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
                                         ?>
                                         <select class="form-control show-tick" name="estado">
-                                            <?php 
+                                            <?php
 
                                         while($datos = mysqli_fetch_array($query2))
-                                            { 
+                                            {
 
                                             ?>
                                             <option value="<?php echo $datos['idEstado']?>"><?php echo $datos['Estado']; ?></option>
 
                                             <?php
-                                                } 
+                                                }
                                             ?>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                               
+
 
                 				   <br>
                                 <button type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar Circular</button><br><br>

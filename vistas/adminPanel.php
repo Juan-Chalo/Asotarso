@@ -1,9 +1,8 @@
-﻿<?php
+<?php
 session_start ();
 
 if($_SESSION["usuario"] === null)
   header("Location: ../index.html");
-
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +15,7 @@ if($_SESSION["usuario"] === null)
     <title>AsotarsoChiqui | Administracion</title>
     <!-- Favicon-->
      <link href=" ../assets/img/iconotaxi.ico" rel="icon">
-    
+
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -84,7 +83,7 @@ if($_SESSION["usuario"] === null)
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
-                    
+
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
                     <li class="dropdown">
@@ -95,9 +94,9 @@ if($_SESSION["usuario"] === null)
                     <!-- Tasks -->
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            
+
                         </a>
-                      
+
                     </li>
                     <!-- #END# Tasks -->
                     <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
@@ -161,11 +160,11 @@ if($_SESSION["usuario"] === null)
                                     </li>
                                 </ul>
                             </li>
-                    
-                             
+
+
                         </ul>
                     </li>
-                   
+
                      <li>
                         <a href="gestionSocios.php">
                             <i class="material-icons">assignment</i>
@@ -191,17 +190,34 @@ if($_SESSION["usuario"] === null)
                                     </li>
                                 </ul>
                             </li>
-                    
-                             
+
+
                         </ul>
                     </li>
-                   
-                   <li>
-                        <a href="#">
-                            <i class="material-icons">pie_chart</i>
-                            <span>Gestion de Pilotos</span>
-                        </a>
-                    </li>
+
+                    <li>
+                      <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">pie_chart</i>
+                          <span>Gestion de Taxis</span>
+                      </a>
+                      <ul class="ml-menu">
+                          <li>
+                              <a href="javascript:void(0);" class="menu-toggle">
+                                  <span>Taxis</span>
+                              </a>
+                              <ul class="ml-menu">
+                                  <li>
+                                      <a href="taxis.php">Lista de Taxis</a>
+                                  </li>
+                                  <li>
+                                      <a href="AgregarTaxi.php">Agregar Taxi</a>
+                                  </li>
+                              </ul>
+                          </li>
+
+
+                      </ul>
+                  </li>
                     <li>
                         <a href="circularessocios.php">
                             <i class="material-icons">map</i>
@@ -210,12 +226,29 @@ if($_SESSION["usuario"] === null)
                     </li>
 
                     <li>
-                        <a href="#">
-                            <i class="material-icons">update</i>
-                            <span>Actividades Generales</span>
-                        </a>
-                    </li>
-                  
+                      <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">update</i>
+                          <span>Actividades Generales</span>
+                      </a>
+                      <ul class="ml-menu">
+                          <li>
+                              <a href="javascript:void(0);" class="menu-toggle">
+                                  <span>Actividades</span>
+                              </a>
+                              <ul class="ml-menu">
+                                  <li>
+                                      <a href="actividadesGenerales.php">Lista de Actividades</a>
+                                  </li>
+                                  <li>
+                                      <a href="agregarActividadGeneral.php">Agregar Actividad</a>
+                                  </li>
+                              </ul>
+                          </li>
+
+
+                      </ul>
+                  </li>
+
                       <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">donut_large</i>
@@ -235,11 +268,41 @@ if($_SESSION["usuario"] === null)
                                     </li>
                                 </ul>
                             </li>
-                    
-                             
+
+
                         </ul>
                     </li>
-               
+                    <li>
+                      <a href="javascript:void(0);" class="menu-toggle">
+                          <i class="material-icons">donut_large</i>
+                          <span>Gestion de Pilotos</span>
+                      </a>
+                      <ul class="ml-menu">
+                          <li>
+                              <a href="javascript:void(0);" class="menu-toggle">
+                                  <span>Pilotos</span>
+                              </a>
+                              <ul class="ml-menu">
+                                  <li>
+                                      <a href="mostrarPilotos.php">Lista de Pilotos</a>
+                                  </li>
+                                  <li>
+                                      <a href="agregarPiloto.php">Agregar Piloto</a>
+                                  </li>
+                              </ul>
+                          </li>
+
+
+                      </ul>
+                  </li>
+
+                <li>
+                    <a href="asignarTaxiPilotoSocio.php">
+                        <i class="material-icons">donut_large</i>
+                        <span>Asignacion Socio-Taxi</span>
+                    </a>
+                </li>
+
                     <li class="header">Sobre Nosotros</li>
                     <li>
                         <a href="javascript:void(0);">
@@ -268,10 +331,10 @@ if($_SESSION["usuario"] === null)
                     &copy; 2020 <a href="javascript:void(0);">Asotarso - Chiquimulilla </a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 0.0.1 
+                    <b>Version: </b> 0.0.1
                 </div>
                 <div class="version">
-                    <b>Creado por:</b>SoftwareSolutions 
+                    <b>Creado por:</b>SoftwareSolutions
                 </div>
             </div>
             <!-- #Footer -->
@@ -410,6 +473,9 @@ if($_SESSION["usuario"] === null)
             <div class="block-header">
                 <h2>DASHBOARD</h2>
             </div>
+            <div class="block-header">
+                <h2>Resumen TOTALES DE DATOS EN EL SISTEMA</h2>
+            </div>
 
             <!-- Widgets -->
             <div class="row clearfix">
@@ -419,8 +485,30 @@ if($_SESSION["usuario"] === null)
                             <i class="material-icons">playlist_add_check</i>
                         </div>
                         <div class="content">
-                            <div class="text">Reportes Ingresados</div>
-                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                          <?php
+                            include ('../controller/conexionBd.php');
+                            $consulta1 = "SELECT * FROM multas where tipo=1";
+                            $resultado1 = mysqli_query($connect,$consulta1);
+                            $total1 = mysqli_num_rows($resultado1);
+                            ?>
+                            <div class="text">R. Mensuales Ingresados</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total1; ?>" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">playlist_add_check</i>
+                        </div>
+                        <div class="content">
+                          <?php
+                            $consulta2 = "SELECT * FROM multas where tipo=2";
+                            $resultado2 = mysqli_query($connect,$consulta2);
+                            $total2 = mysqli_num_rows($resultado2);
+                            ?>
+                            <div class="text">R. Organizacionales Ingresados</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total2;?>" data-speed="15" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -430,8 +518,13 @@ if($_SESSION["usuario"] === null)
                             <i class="material-icons">forum</i>
                         </div>
                         <div class="content">
+                          <?php
+                            $consultacoment = "SELECT * FROM comentarios";
+                            $resultadocoment = mysqli_query($connect,$consultacoment);
+                            $totalcomentarios = mysqli_num_rows($resultadocoment);
+                            ?>
                             <div class="text">Comentarios/Quejas</div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $totalcomentarios;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -441,11 +534,168 @@ if($_SESSION["usuario"] === null)
                             <i class="material-icons">person_add</i>
                         </div>
                         <div class="content">
-                            <div class="text">Usuarios Agregados</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                          <?php
+                            $consulta3 = "SELECT * FROM usuarios where Estado_idEstado=1";
+                            $resultado3 = mysqli_query($connect,$consulta3);
+                            $total3 = mysqli_num_rows($resultado3);
+                            ?>
+                            <div class="text">Total Usuarios Activos</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total3;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">playlist_add_check</i>
+                        </div>
+                        <div class="content">
+                          <?php
+                            $consulta4 = "SELECT * FROM socios where Estado_idEstado=1";
+                            $resultado4 = mysqli_query($connect,$consulta4);
+                            $total4 = mysqli_num_rows($resultado4);
+                            ?>
+                            <div class="text">Total Socios Activos</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total4;?>" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-light-green hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">playlist_add_check</i>
+                        </div>
+                        <div class="content">
+                          <?php
+                            $consulta5 = "SELECT * FROM reporte where Estado_idEstado=1";
+                            $resultado5 = mysqli_query($connect,$consulta5);
+                            $total5 = mysqli_num_rows($resultado5);
+                            ?>
+                            <div class="text">Total R.Financieros Socios</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total5;?>" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">playlist_add_check</i>
+                        </div>
+                        <div class="content">
+                          <?php
+                            $consulta6 = "SELECT * FROM reporte_directiva where Estado_idEstado=1";
+                            $resultado6 = mysqli_query($connect,$consulta6);
+                            $total6 = mysqli_num_rows($resultado6);
+                            ?>
+                            <div class="text">Total R.Financieros Directiva</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total6;?>" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                    <div class="content">
+                      <?php
+                        $consulta7 = "SELECT * FROM taxi WHERE Estado_idEstado=1";
+                        $resultado7 = mysqli_query($connect,$consulta7);
+                        $total7 = mysqli_num_rows($resultado7);
+                        ?>
+                        <div class="text">Total Taxis Activos</div>
+                        <div class="number count-to" data-from="0" data-to="<?php echo $total7;?>" data-speed="15" data-fresh-interval="20"></div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box bg-light-green hover-expand-effect">
+                      <div class="icon">
+                          <i class="material-icons">forum</i>
+                      </div>
+                      <div class="content">
+                        <?php
+                          $consulta8 = "SELECT * FROM actividadessocio WHERE Estado_idEstado=1";
+                          $resultado8 = mysqli_query($connect,$consulta8);
+                          $total8 = mysqli_num_rows($resultado8);
+                          ?>
+                          <div class="text">Total Circulares Activas</div>
+                          <div class="number count-to" data-from="0" data-to="<?php echo $total8;?>" data-speed="1000" data-fresh-interval="20"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box bg-orange hover-expand-effect">
+                      <div class="icon">
+                          <i class="material-icons">playlist_add_check</i>
+                      </div>
+                      <div class="content">
+                        <?php
+                          $consulta9 = "SELECT * FROM actividadesgenerales where Estado_idEstado=1";
+                          $resultado9 = mysqli_query($connect,$consulta9);
+                          $total9 = mysqli_num_rows($resultado9);
+                          ?>
+                          <div class="text">Total Actividades G. Pendientes</div>
+                          <div class="number count-to" data-from="0" data-to="<?php echo $total9;?>" data-speed="1000" data-fresh-interval="20"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box bg-pink hover-expand-effect">
+                      <div class="icon">
+                          <i class="material-icons">playlist_add_check</i>
+                      </div>
+                      <div class="content">
+                        <?php
+                          $consulta10 = "SELECT * FROM producto where Estado_idEstado=1";
+                          $resultado10 = mysqli_query($connect,$consulta10);
+                          $total10 = mysqli_num_rows($resultado10);
+                          ?>
+                          <div class="text">Total Repuestos Disponibles</div>
+                          <div class="number count-to" data-from="0" data-to="<?php echo $total10;?>" data-speed="15" data-fresh-interval="20"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box bg-light-green hover-expand-effect">
+                      <div class="icon">
+                          <i class="material-icons">playlist_add_check</i>
+                      </div>
+                      <div class="content">
+                        <?php
+                          $consulta11 = "SELECT * FROM pilotos where TipoPiloto_idTipoPiloto=1";
+                          $resultado11 = mysqli_query($connect,$consulta11);
+                          $total11 = mysqli_num_rows($resultado11);
+                          ?>
+                          <div class="text">Total Pilotos TITULARES Activos</div>
+                          <div class="number count-to" data-from="0" data-to="<?php echo $total11;?>" data-speed="1000" data-fresh-interval="20"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box bg-pink hover-expand-effect">
+                      <div class="icon">
+                          <i class="material-icons">playlist_add_check</i>
+                      </div>
+                      <div class="content">
+                        <?php
+                          $consulta12 = "SELECT * FROM pilotos where TipoPiloto_idTipoPiloto=2";
+                          $resultado12 = mysqli_query($connect,$consulta12);
+                          $total12 = mysqli_num_rows($resultado12);
+                          ?>
+                          <div class="text">Total Pilotos SUPLENTES Activos</div>
+                          <div class="number count-to" data-from="0" data-to="<?php echo $total12;?>" data-speed="1000" data-fresh-interval="20"></div>
+                      </div>
+                  </div>
+              </div>
+
+
             </div>
             <!-- #END# Widgets -->
             <!-- CPU Usage -->
@@ -496,17 +746,20 @@ if($_SESSION["usuario"] === null)
                                 12,10,9,6,5,6,10,5,7,5,12,13,7,12,11
                             </div>
                             <ul class="dashboard-stat-list">
+                              <li>
+                                LA FECHA DE HOY ES:
+                              </li>
                                 <li>
-                                    TODAY
-                                    <span class="pull-right"><b>1 200</b> <small>USERS</small></span>
+                                    DIA -------------------------------------------------->
+                                    <span class="pull-right"><b><?php echo date("d"); ?></b></span>
                                 </li>
                                 <li>
-                                    YESTERDAY
-                                    <span class="pull-right"><b>3 872</b> <small>USERS</small></span>
+                                    MES -------------------------------------------------->
+                                    <span class="pull-right"><b><?php echo date("m"); ?></b></span>
                                 </li>
                                 <li>
-                                    LAST WEEK
-                                    <span class="pull-right"><b>26 582</b> <small>USERS</small></span>
+                                    DEL AÑO ----------------------------------->
+                                    <span class="pull-right"><b><?php echo date("Y"); ?></b></span>
                                 </li>
                             </ul>
                         </div>
@@ -517,29 +770,24 @@ if($_SESSION["usuario"] === null)
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card">
                         <div class="body bg-cyan">
-                            <div class="m-b--35 font-bold">LATEST SOCIAL TRENDS</div>
+                            <div class="m-b--35 font-bold">Ultimos Pilotos Ingresados</div>
                             <ul class="dashboard-stat-list">
+                              <?php
+                                $consultado = "SELECT * FROM pilotos ORDER BY idPilotos DESC LIMIT 8 ";
+                                $resultado = mysqli_query($connect,$consultado);
+
+                                while ($row=mysqli_fetch_object($resultado)){
+
+            											$nombre=$row->NombrePilotos;
+
+            									?>
                                 <li>
-                                    #socialtrends
+                                    <?php echo $nombre; ?>
                                     <span class="pull-right">
                                         <i class="material-icons">trending_up</i>
                                     </span>
                                 </li>
-                                <li>
-                                    #materialdesign
-                                    <span class="pull-right">
-                                        <i class="material-icons">trending_up</i>
-                                    </span>
-                                </li>
-                                <li>#adminbsb</li>
-                                <li>#freeadmintemplate</li>
-                                <li>#bootstraptemplate</li>
-                                <li>
-                                    #freehtmltemplate
-                                    <span class="pull-right">
-                                        <i class="material-icons">trending_up</i>
-                                    </span>
-                                </li>
+                              <?php } ?>
                             </ul>
                         </div>
                     </div>
@@ -549,32 +797,22 @@ if($_SESSION["usuario"] === null)
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card">
                         <div class="body bg-teal">
-                            <div class="font-bold m-b--35">ANSWERED TICKETS</div>
+                            <div class="font-bold m-b--35">ULTIMOS REPORTES DE MULTAS MENSUALES INGRESADOS</div>
                             <ul class="dashboard-stat-list">
+                              <?php
+                                $consultado2 = "SELECT * FROM multas ORDER BY idMultas DESC LIMIT 8 ";
+                                $resultado2 = mysqli_query($connect,$consultado2);
+
+                                while ($row=mysqli_fetch_object($resultado2)){
+
+            											$descripcion=$row->DescripcionMulta;
+
+            									?>
                                 <li>
-                                    TODAY
-                                    <span class="pull-right"><b>12</b> <small>TICKETS</small></span>
+                                      <?php echo $descripcion; ?>
+                                    <span class="pull-right"></span>
                                 </li>
-                                <li>
-                                    YESTERDAY
-                                    <span class="pull-right"><b>15</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    LAST WEEK
-                                    <span class="pull-right"><b>90</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    LAST MONTH
-                                    <span class="pull-right"><b>342</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    LAST YEAR
-                                    <span class="pull-right"><b>4 225</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    ALL
-                                    <span class="pull-right"><b>8 752</b> <small>TICKETS</small></span>
-                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
@@ -587,16 +825,15 @@ if($_SESSION["usuario"] === null)
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <div class="card">
                         <div class="header">
-                            <h2>TASK INFOS</h2>
+                            <h2>Vista Previa, Ultimos Socios Registrados</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                        <li><a href="gestionSocios.php">Agregar Nuevo</a></li>
+                                        <li><a href="socios.php">Ver Socios</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -606,71 +843,35 @@ if($_SESSION["usuario"] === null)
                                 <table class="table table-hover dashboard-task-infos">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Task</th>
-                                            <th>Status</th>
-                                            <th>Manager</th>
-                                            <th>Progress</th>
+                                            <th>Id del Socio</th>
+                                            <th>Nombre del Socio</th>
+                                            <th>Apellidos del Socio</th>
+                                            <th>Estado</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      <?php
+                                        $consultado3 = "SELECT * FROM socios ORDER BY idSocios DESC LIMIT 5 ";
+                                        $resultado3 = mysqli_query($connect,$consultado3);
+
+                                        while ($row=mysqli_fetch_object($resultado3)){
+                                          $id=$row->idSocios;
+                    											$nombre=$row->NombreSocio;
+                                          $apellidos=$row->ApellidosSocio;
+                                          if ($row->Estado_idEstado=1) {
+                                            $estado = "ACTIVO";
+                                          }else {
+                                              $estado = "INACTIVO";
+                                          }
+
+                    									?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Task A</td>
-                                            <td><span class="label bg-green">Doing</span></td>
-                                            <td>John Doe</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
-                                                </div>
-                                            </td>
+                                            <td><?php echo $id; ?></td>
+                                            <td><?php echo $nombre; ?></td>
+                                            <td><?php echo $apellidos; ?></td>
+                                            <td><?php echo $estado; ?></td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Task B</td>
-                                            <td><span class="label bg-blue">To Do</span></td>
-                                            <td>John Doe</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Task C</td>
-                                            <td><span class="label bg-light-blue">On Hold</span></td>
-                                            <td>John Doe</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-light-blue" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Task D</td>
-                                            <td><span class="label bg-orange">Wait Approvel</span></td>
-                                            <td>John Doe</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Task E</td>
-                                            <td>
-                                                <span class="label bg-red">Suspended</span>
-                                            </td>
-                                            <td>John Doe</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                      <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -703,6 +904,84 @@ if($_SESSION["usuario"] === null)
                 </div>
                 <!-- #END# Browser Usage -->
             </div>
+
+
+            <!-- Exportable Table -->
+                        <div class="row clearfix">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h2>
+                                            Vista de Circulares Activas
+                                        </h2><br>
+                                        <a href="circularessocios.php" type="button" class="btn btn-success waves-effect">Nueva Circular</a>
+
+                                    </div>
+
+                                    <div class="body">
+                                    	<h4>Exportar en:</h4>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID_Circular</th>
+                                                        <th>Asunto de la Circular</th>
+                                                        <th>Fecha</th>
+                                                        <th>Opcion1</th>
+                                                        <th>Opcion2</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                      <th>ID_Circular</th>
+                                                      <th>Asunto de la Circular</th>
+                                                      <th>Fecha</th>
+                                                      <th>Opcion1</th>
+                                                      <th>Opcion2</th>
+                                                    </tr>
+                                                </tfoot>
+
+                                                	<?php
+            												include ('../Controladores/clasesControladores.php');
+            												$circular = new Circulares();
+            												$listado=$circular->verCirculares();
+            											?>
+
+
+                                                <tbody>
+
+                                                	<?php
+            										while ($row=mysqli_fetch_object($listado)){
+            											$id=$row->idActividades;
+            											$asunto=$row->asunto;
+                                  $fecha=$row->FechaActividad;
+            									?>
+                                                    <tr>
+                                                        <td><?php echo $id;?></td>
+                                                        <td><?php echo $asunto;?></td>
+                                                        <td><?php echo $fecha;?></td>
+                                                        <td>
+                                                        	<a href="detalleCircular.php?id=<?php echo $id;?>" type="button" class="btn btn-info waves-effect">Ver Detalles</a>
+                                                        </td>
+                                                        <td>
+                                                        	<a href="eliminarCircular.php?id=<?php echo $id;?>" type="button" class="btn btn-danger waves-effect">Eliminar</a>
+                                                        </td>
+
+
+                                                    </tr>
+                                                    <?php
+            												}
+            											?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #END# Exportable Table -->
+
+
         </div>
     </section>
 
@@ -742,12 +1021,11 @@ if($_SESSION["usuario"] === null)
     <script src=" ../plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
     <!-- Custom Js -->
-    <script src=" ../js/admin.js"></script>
     <script src=" ../js/pages/index.js"></script>
 
     <!-- Demo Js -->
     <script src=" ../js/demo.js"></script>
-    
+
     <!-- Jquery DataTable Plugin Js -->
     <script src=" ../plugins/jquery-datatable/jquery.dataTables.js"></script>
     <script src=" ../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
@@ -758,6 +1036,10 @@ if($_SESSION["usuario"] === null)
     <script src=" ../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
     <script src=" ../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
     <script src=" ../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src=" ../js/admin.js"></script>
+    <script src=" ../js/pages/tables/jquery-datatable.js"></script>
 </body>
 
 </html>

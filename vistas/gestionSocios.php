@@ -28,9 +28,9 @@ if($_SESSION["usuario"] === null)
 							}else{
 								echo "<div class='alert alert-danger' role='alert'>Error al agregar Socio :(</div>";
 							}
-							
+
 						}
-	
+
 				?>
 
 
@@ -82,19 +82,19 @@ if($_SESSION["usuario"] === null)
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                 	<?php
-				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado"); 
+				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
 										?>
                                         <select class="form-control show-tick" name="estado">
-                                        	<?php 
+                                        	<?php
 
 										while($datos = mysqli_fetch_array($query2))
-											{ 
+											{
 
 											?>
                                         	<option value="<?php echo $datos['idEstado']?>"><?php echo $datos['Estado']; ?></option>
 
                                         	<?php
-												} 
+												}
 											?>
                                         </select>
                                     </div>
@@ -103,7 +103,7 @@ if($_SESSION["usuario"] === null)
 
                 				   <br>
                                 <button type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar Socio</button><br><br>
-                                <a href="usuarios.php" class="btn btn-danger waves-effect">Cancelar</a>
+                                <a href="adminPanel.php" class="btn btn-danger waves-effect">Cancelar</a>
                             </form>
                         </div>
                     </div>

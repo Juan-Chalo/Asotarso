@@ -76,7 +76,7 @@ if($_SESSION["usuario"] === null)
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
-                    
+
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
                     <li class="dropdown">
@@ -87,9 +87,9 @@ if($_SESSION["usuario"] === null)
                     <!-- Tasks -->
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            
+
                         </a>
-                      
+
                     </li>
                     <!-- #END# Tasks -->
                     <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
@@ -153,11 +153,11 @@ if($_SESSION["usuario"] === null)
                                     </li>
                                 </ul>
                             </li>
-                    
-                             
+
+
                         </ul>
                     </li>
-                   
+
                      <li>
                         <a href="gestionSocios.php">
                             <i class="material-icons">assignment</i>
@@ -183,10 +183,35 @@ if($_SESSION["usuario"] === null)
                                     </li>
                                 </ul>
                             </li>
-                    
-                             
+
+
                         </ul>
                     </li>
+
+                    <li>
+                      <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">pie_chart</i>
+                          <span>Gestion de Taxis</span>
+                      </a>
+                      <ul class="ml-menu">
+                          <li>
+                              <a href="javascript:void(0);" class="menu-toggle">
+                                  <span>Taxis</span>
+                              </a>
+                              <ul class="ml-menu">
+                                  <li>
+                                      <a href="taxis.php">Lista de Taxis</a>
+                                  </li>
+                                  <li>
+                                      <a href="AgregarTaxi.php">Agregar Taxi</a>
+                                  </li>
+                              </ul>
+                          </li>
+
+
+                      </ul>
+                  </li>
+
                    <li>
                         <a href="#">
                             <i class="material-icons">pie_chart</i>
@@ -201,12 +226,36 @@ if($_SESSION["usuario"] === null)
                     </li>
 
                     <li>
+                      <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">update</i>
+                          <span>Actividades Generales</span>
+                      </a>
+                      <ul class="ml-menu">
+                          <li>
+                              <a href="javascript:void(0);" class="menu-toggle">
+                                  <span>Actividades</span>
+                              </a>
+                              <ul class="ml-menu">
+                                  <li>
+                                      <a href="actividadesGenerales.php">Lista de Actividades</a>
+                                  </li>
+                                  <li>
+                                      <a href="agregarActividadGeneral.php">Agregar Actividad</a>
+                                  </li>
+                              </ul>
+                          </li>
+
+
+                      </ul>
+                  </li>
+
+                    <li>
                         <a href="#">
                             <i class="material-icons">update</i>
                             <span>Actividades Generales</span>
                         </a>
                     </li>
-                  
+
                       <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">donut_large</i>
@@ -226,11 +275,35 @@ if($_SESSION["usuario"] === null)
                                     </li>
                                 </ul>
                             </li>
-                    
-                             
+
+
                         </ul>
                     </li>
-               
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">donut_large</i>
+                            <span>Gestion de Pilotos </span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <span>Pilotos</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="mostrarPilotos.php">Lista de Pilotos</a>
+                                    </li>
+                                    <li>
+                                        <a href="agregarPiloto.php">Agregar Pilotos </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
                     <li class="header">Sobre Nosotros</li>
                     <li>
                         <a href="javascript:void(0);">
@@ -259,10 +332,10 @@ if($_SESSION["usuario"] === null)
                     &copy; 2020 <a href="javascript:void(0);">Asotarso - Chiquimulilla </a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 0.0.1 
+                    <b>Version: </b> 0.0.1
                 </div>
                 <div class="version">
-                    <b>Creado por:</b>SoftwareSolutions 
+                    <b>Creado por:</b>SoftwareSolutions
                 </div>
             </div>
             <!-- #Footer -->

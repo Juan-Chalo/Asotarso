@@ -1,14 +1,14 @@
-<?php  
+<?php
 
-//CONTROLADOR GESTION DE USUARIOS 
+//CONTROLADOR GESTION DE USUARIOS
 
 
  /**
-  * 
+  *
   */
  class DatosUsuario
  {
- 	
+
  		private $con;
 		private $dbhost="localhost";
 		private $dbuser="asotarsochiqui";//asotarsochiqui root
@@ -38,7 +38,7 @@
 
 
 
-		//metodo de lectura 
+		//metodo de lectura
 
 		public function leerUsuarios(){
 			$sql = "SELECT * FROM usuarios WHERE Estado_idEstado=1";
@@ -97,14 +97,14 @@
 				return false;
 			}
 		}
-		
+
  }
 
-//CONTROLADOR GESTION DE Producto 
+//CONTROLADOR GESTION DE Producto
 
 
  /**
-  * 
+  *
   */
  class Producto
 {
@@ -130,7 +130,7 @@
 		}
 
 
-//Metodo para agregar un nuevo Producto 
+//Metodo para agregar un nuevo Producto
 
 			public function agregarProducto($codigo, $nameProducto, $precio, $existencia, $rolCategoria, $estado){
 			$sql = "INSERT INTO `producto` (codigo , nombreProducto , precioProducto , Existencia, CategoriaProducto_idCategoriaProducto , Estado_idEstado) VALUES ('$codigo', '$nameProducto', '$precio', '$existencia' , '$rolCategoria' ,'$estado')";
@@ -143,7 +143,7 @@
 		}
 
 
-//metodo de lectura de producto 
+//metodo de lectura de producto
 
 		public function leerProducto(){
 			$sql = "SELECT * FROM producto WHERE Estado_idEstado=1";
@@ -159,10 +159,10 @@
 			return $return ;
 		}
 
-//Metodo para Actualizar el producto 
+//Metodo para Actualizar el producto
 
 		public function actualizarProducto($codigo, $nameProducto,  $precio, $cantidad, $id_productos){
-			$sql = "UPDATE producto SET codigo='$codigo', nombreProducto ='$nameProducto', 
+			$sql = "UPDATE producto SET codigo='$codigo', nombreProducto ='$nameProducto',
 			precioProducto='$precio', Existencia='$cantidad' WHERE idProducto=$id_productos";
 			$res = mysqli_query($this->con, $sql);
 			if($res){
@@ -202,7 +202,7 @@
 
 
   /**
-   * 
+   *
    */
   class Circulares
   {
@@ -227,8 +227,8 @@
 			return $return;
 		}
 
-			public function agregarCircular($asunto,$descripcion,$fecha,$lugar,$estado){
-			$sql = "INSERT INTO `actividadessocio` (asunto, DescripcionActividades, FechaActividad, LugarActividad, Estado_idEstado) VALUES ('$asunto', '$descripcion', '$fecha', '$lugar', '$estado')";
+			public function agregarCircular($asunto,$descripcion,$fecha,$lugar,$hora,$estado){
+			$sql = "INSERT INTO `actividadessocio` (asunto, DescripcionActividades, FechaActividad, LugarActividad, hora, Estado_idEstado) VALUES ('$asunto', '$descripcion', '$fecha', '$lugar', '$hora', '$estado')";
 			$res = mysqli_query($this->con, $sql);
 			if($res){
 				return true;
@@ -236,8 +236,32 @@
 				return false;
 			}
 		}
-  	
-  	
+
+
+    public function verCirculares(){
+      $sql = "SELECT * FROM actividadessocio WHERE Estado_idEstado=1";
+      $res = mysqli_query($this->con, $sql);
+      return $res;
+    }
+
+    public function single_record($id){
+    $sql = "SELECT * FROM actividadessocio where idActividades='$id'";
+    $res = mysqli_query($this->con, $sql);
+    $return = mysqli_fetch_object($res );
+    return $return ;
+  }
+
+  public function borrarCircular($id){
+  $sql = "UPDATE actividadessocio SET Estado_idEstado = 2 WHERE idActividades='$id'";
+  $res = mysqli_query($this->con, $sql);
+  if($res){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+
   }
 
 
@@ -277,18 +301,18 @@
 			}else{
 				return false;
 			}
-
-
-
-  	
-  
-  	
   }
+
+      public function verSocios(){
+        $sql = "SELECT * FROM socios WHERE Estado_idEstado=1";
+        $res = mysqli_query($this->con, $sql);
+        return $res;
+      }
 
 }
 
 /**
- * 
+ *
  */
 class finanzasSocios
 	{
@@ -312,7 +336,7 @@ class finanzasSocios
 			return $return;
 		}
 
-		//metodo de lectura 
+		//metodo de lectura
 
 		public function verFinanzasSocios(){
 			$sql = "SELECT * FROM reporte WHERE Estado_idEstado=1";
@@ -330,13 +354,13 @@ class finanzasSocios
 			}else{
 				return false;
 			}
-		
+
 	}
-	
+
 }
 
 /**
- * 
+ *
  */
 class finanzasDirectiva
 	{
@@ -384,7 +408,299 @@ class finanzasDirectiva
 
 
 }
-	
+
+
+
+class Piloto
+{
+
+		private $con;
+		private $dbhost="localhost";
+		private $dbuser="asotarsochiqui";
+		private $dbpass="asotarsoChiqui20!";
+		private $dbname="asotarsochiqui";
+		function __construct(){
+			$this->connect_db();
+		}
+		public function connect_db(){
+			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+			if(mysqli_connect_error()){
+				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+			}
+		}
+
+		public function sanitize($var){
+			$return = mysqli_real_escape_string($this->con, $var);
+			return $return;
+		}
+
+		public function single_record($id){
+			$sql = "SELECT * FROM pilotos where idPilotos='$id'";
+			$res = mysqli_query($this->con, $sql);
+			$return = mysqli_fetch_object($res );
+			return $return ;
+		}
+
+
+			public function agregarPiloto($namepiloto,$apellidosPiloto,$dpi,$direccionP,$telefonoP,$licencia,$vencimientolicencia,$antecedentes,$rolpiloto,$estado){
+			$sql = "INSERT INTO `pilotos` (NombrePilotos, ApellidosPilotos, NoDPI, Direccion, Telefono, NoLicencia, FechaVencimientoLicencia, FechaVencimientoAntecedentes, TipoPiloto_idTipoPiloto, Estado_idEstado) VALUES ('$namepiloto', '$apellidosPiloto', '$dpi', '$direccionP', '$telefonoP', '$licencia','$vencimientolicencia', '$antecedentes', '$rolpiloto', '$estado')";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+
+
+//metodo de lectura de pilotos
+
+		public function leerPiloto(){
+			$sql = "SELECT * FROM pilotos WHERE Estado_idEstado=1";
+			$res = mysqli_query($this->con, $sql);
+			return $res;
+		}
+
+		public function actualizarPiloto($name, $apellido,  $dpI, $direc, $cel, $nLicencia, $vLicencia, $vAntecedentes, $id_pilotos){
+			$sql = "UPDATE pilotos SET NombrePilotos='$name', ApellidosPilotos='$apellido',
+			NoDPI='$dpI', Direccion='$direc', Telefono='$cel', NoLicencia='$nLicencia', FechaVencimientoLicencia='$vLicencia', FechaVencimientoAntecedentes='$vAntecedentes' WHERE idPilotos=$id_pilotos";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+
+		public function borrarPiloto($id){
+			$sql = "UPDATE pilotos SET Estado_idEstado = 2 WHERE idPilotos=$id";
+			$res = mysqli_query($this->con, $sql);
+			if($res){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+}
+
+
+//  CLASE Y METODOS PARA LA GESTION DE TAXIS
+
+class GestionTaxis
+
+{
+  private $con;
+  private $dbhost="localhost";
+  private $dbuser="asotarsochiqui";
+  private $dbpass="asotarsoChiqui20!";
+  private $dbname="asotarsochiqui";
+  function __construct(){
+    $this->connect_db();
+  }
+  public function connect_db(){
+    $this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+    if(mysqli_connect_error()){
+      die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+    }
+  }
+
+  public function sanitize($var){
+    $return = mysqli_real_escape_string($this->con, $var);
+    return $return;
+  }
+
+  //Metodo para Crear Socio nuevo
+
+    public function AgregarTaxi($NumeroTaxi,$PlacaTaxi,$Estado){
+    $sql = "INSERT INTO `taxi` (NumeroTaxi, PlacaTaxi, Estado_idEstado) VALUES ('$NumeroTaxi', '$PlacaTaxi','$Estado')";
+    $res = mysqli_query($this->con, $sql);
+    if($res){
+      return true;
+    }else{
+      return false;
+    }
+
+    }
+
+    public function verTaxis(){
+      $sql = "SELECT * FROM taxi WHERE Estado_idEstado=1";
+      $res = mysqli_query($this->con, $sql);
+      return $res;
+    }
+
+    public function borrarTaxi($id){
+      $sql = "UPDATE taxi SET Estado_idEstado = 2 WHERE idTaxi=$id";
+      $res = mysqli_query($this->con, $sql);
+      if($res){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+
+  }
+
+
+  //  CLASE Y METODOS PARA LA GESTION DE ACTIVIDADES GENERALES
+
+  class ActividadesGenerales
+
+  {
+    private $con;
+    private $dbhost="localhost";
+    private $dbuser="asotarsochiqui";
+    private $dbpass="asotarsoChiqui20!";
+    private $dbname="asotarsochiqui";
+    function __construct(){
+      $this->connect_db();
+    }
+    public function connect_db(){
+      $this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+      if(mysqli_connect_error()){
+        die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+      }
+    }
+
+    public function sanitize($var){
+      $return = mysqli_real_escape_string($this->con, $var);
+      return $return;
+    }
+
+    public function single_record($id){
+      $sql = "SELECT * FROM actividadesgenerales where idActividades='$id'";
+      $res = mysqli_query($this->con, $sql);
+      $return = mysqli_fetch_object($res );
+      return $return ;
+    }
+
+    //Metodo para Crear Socio nuevo
+
+      public function AgregarActividad($descripcion,$fecha,$lugar,$hora,$Estado){
+      $sql = "INSERT INTO `actividadesgenerales` (DescripcionActividades, FechaActividad, LugarActividad, hora, Estado_idEstado) VALUES ('$descripcion', '$fecha','$lugar','$hora','$Estado')";
+      $res = mysqli_query($this->con, $sql);
+      if($res){
+        return true;
+      }else{
+        return false;
+      }
+
+      }
+
+      public function verActividadesGenerales(){
+        $sql = "SELECT * FROM actividadesgenerales WHERE Estado_idEstado=1";
+        $res = mysqli_query($this->con, $sql);
+        return $res;
+      }
+
+      public function borrarActividadGeneral($id){
+        $sql = "UPDATE actividadesgenerales SET Estado_idEstado = 2 WHERE idActividades='$id'";
+        $res = mysqli_query($this->con, $sql);
+        if($res){
+          return true;
+        }else{
+          return false;
+        }
+      }
+
+      public function actualizarActividadGeneral($descripcion,$fecha,$lugar,$hora,$id_actividad){
+        $sql = "UPDATE actividadesgenerales SET DescripcionActividades='$descripcion', FechaActividad='$fecha',
+        LugarActividad='$lugar' hora='$hora' WHERE idActividades='$id_actividad'";
+        $res = mysqli_query($this->con, $sql);
+        if($res){
+          return true;
+        }else{
+          return false;
+        }
+      }
+
+
+    }
+
+
+
+    //////////////////////
+
+    //  CLASE Y METODOS PARA ASIGNACION DE TAXIS Y PILOTOS A SOCIOS
+
+    class socioTaxiPiloto
+
+    {
+      private $con;
+      private $dbhost="localhost";
+      private $dbuser="asotarsochiqui";
+      private $dbpass="asotarsoChiqui20!";
+      private $dbname="asotarsochiqui";
+      function __construct(){
+        $this->connect_db();
+      }
+      public function connect_db(){
+        $this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+        if(mysqli_connect_error()){
+          die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+        }
+      }
+
+      public function sanitize($var){
+        $return = mysqli_real_escape_string($this->con, $var);
+        return $return;
+      }
+
+      public function single_record($id){
+        $sql = "SELECT * FROM actividadesgenerales where idActividades='$id'";
+        $res = mysqli_query($this->con, $sql);
+        $return = mysqli_fetch_object($res );
+        return $return ;
+      }
+
+      //Metodo para Crear Socio nuevo
+
+        public function asignarTaxiPiloto($id_taxi,$id_usuario,$id_piloto){
+        $sql = "INSERT INTO `socios_has_taxi` (Taxi_idTaxi, Usuarios_idUsuarios, Pilotos_idPilotos) VALUES ('$id_taxi', '$id_usuario','$id_piloto')";
+        $res = mysqli_query($this->con, $sql);
+        if($res){
+          return true;
+        }else{
+          return false;
+        }
+
+        }
+
+        public function verActividadesGenerales(){
+          $sql = "SELECT * FROM actividadesgenerales WHERE Estado_idEstado=1";
+          $res = mysqli_query($this->con, $sql);
+          return $res;
+        }
+
+        public function borrarActividadGeneral($id){
+          $sql = "UPDATE actividadesgenerales SET Estado_idEstado = 2 WHERE idActividades='$id'";
+          $res = mysqli_query($this->con, $sql);
+          if($res){
+            return true;
+          }else{
+            return false;
+          }
+        }
+
+        public function actualizarActividadGeneral($descripcion,$fecha,$lugar,$id_actividad){
+          $sql = "UPDATE actividadesgenerales SET DescripcionActividades='$descripcion', FechaActividad='$fecha',
+          LugarActividad='$lugar' WHERE idActividades='$id_actividad'";
+          $res = mysqli_query($this->con, $sql);
+          if($res){
+            return true;
+          }else{
+            return false;
+          }
+        }
+
+
+      }
+
+
+
 
 
 

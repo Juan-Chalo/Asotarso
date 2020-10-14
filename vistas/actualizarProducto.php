@@ -15,8 +15,6 @@
                     $nameProducto = $productos->sanitize($_POST['nombreProducto']);
                     $precio = $productos->sanitize($_POST['precioProducto']);
                     $cantidad = $productos->sanitize($_POST['Existencia']);
-                   // $rol1 = $productos->sanitize($_POST['categoriaproducto']);
-                  //$rol2 = $productos->sanitize($_POST['estado']);
                     $id_productos=intval($_POST['id_producto']);
                     $res = $productos->actualizarProducto($codigo, $nameProducto,  $precio, $cantidad, $id_productos);
                     if($res){
@@ -74,56 +72,6 @@
                                         <input value="<?php echo $datos_producto->Existencia;?>" type="text" id="Existencia" name="Existencia" class="form-control" required>
                                     </div>
                                 </div>
-
-                                  <!--<label for="password">Nueva Categoria del Producto?</label>
-                                  <div class="body">
-                            <div class="row clearfix">
-                                <div class="col-sm-6">
-                                	<?php
-				 						/* $query2=mysqli_query($connect,"SELECT idCategoriaProducto, nombreCategoria FROM categoriaproducto"); 
-										?>
-                                        <select class="form-control show-tick" name="categoriaproducto">
-                                        	<?php 
-
-										while($datos = mysqli_fetch_array($query2))
-											{ 
-
-											?>
-                                        	<option value="<?php echo $datos['idCategoriaProducto']?>"><?php echo $datos['nombreCategoria']; ?></option>
-
-                                        	<?php
-												} 
-											?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                             <label for="password">Nueva Estado del Producto?</label>
-                                  <div class="body">
-                            <div class="row clearfix">
-                                <div class="col-sm-6">
-                                	<?php
-				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado"); 
-										?>
-                                        <select class="form-control show-tick" name="estado">
-                                        	<?php 
-
-										while($datos = mysqli_fetch_array($query2))
-											{ 
-
-											?>
-                                        	<option value="<?php echo $datos['idEstado']?>"><?php echo $datos['Estado']; ?></option> */
-
-                                        	//<?php
-												//} 
-											//?> 
-                                        </select>
-                                    </div>
-                                </div>
-                            </div> -->
-
-
                 				   <br>
                                 <button type="submit" class="btn btn-primary m-t-15 waves-effect">Actualizar Producto</button><br><br>
                                 <a href="mostrarProducto.php" class="btn btn-danger waves-effect">Cancelar</a>

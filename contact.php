@@ -49,14 +49,14 @@
       <nav class="nav-menu d-none d-lg-block">
 
         <ul>
-        
+
           <li><a href="index.html">Inicio</a></li>
 
         </ul>
 
       </nav><!-- .nav-menu -->
 
-      
+
 
     </div>
   </header><!-- End Header -->
@@ -113,30 +113,43 @@
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
+            <?php
+              include ("controladores/comentariocontroller.php");
+              $comentario= new Comentario();
+              if(isset($_POST) && !empty($_POST)){
+              $nombre = $comentario->sanitize($_POST['nombre']);
+              $correo = $comentario->sanitize($_POST['correo']);
+              $asunto = $comentario->sanitize($_POST['asunto']);
+              $mensaje = $comentario->sanitize($_POST['mensaje']);
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              $res = $comentario->insertarComentario($nombre, $correo, $asunto, $mensaje);
+              if($res){
+              echo "<div class='alert alert-success' role='alert'>Mensaje Enviado! Gracias por Escribirnos! Nos comunicaremos lo mas pronto posible, Dios le bendiga!</div>";
+              }else{
+              echo "<div class='alert alert-danger' role='alert'>Error al Enviar el Mensaje :(</div>";
+              }
+
+              }
+            ?>
+
+            <form method="post" class="email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="customer_name" class="form-control" id="name" placeholder="Nombre Completo" data-rule="minlen:4" data-msg="Por favor ingrese su nombre..." />
+                  <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre Completo"  required>
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="customer_email" id="email" placeholder="Correo Electronico" data-rule="email" data-msg="Por favor ingrese un correo electronico valido..." />
+                  <input type="text" class="form-control" name="correo" id="correo" placeholder="Correo Electronico" required>
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor ingrese el motivo de su mensaje..." />
+                <input type="text" class="form-control" name="asunto" id="asunto" placeholder="Asunto" required>
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="" rows="5" data-rule="required" data-msg="Por favor escriba su mensaje...." placeholder="Mensaje/Consulta/Queja"></textarea>
+                <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escriba su duda,comentario o queja..." required></textarea>
                 <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Cargando...</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Mensaje Enviado! Gracias por tu escribirnos!</div>
               </div>
               <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
             </form>
@@ -150,7 +163,7 @@
 
   </main><!-- End #main -->
 
-  
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
@@ -181,7 +194,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="index.html">Inicio</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="index.html#actividades">Actividades</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="team.html">Pilotos</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contactenos</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contactenos</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="login.html">Iniciar Sesion</a></li>
             </ul>
           </div>
@@ -219,19 +232,19 @@
     <?php
       if (isset($_POST['send'])){
         include("sendemail.php");//Mando a llamar la funcion que se encarga de enviar el correo electronico
-        
+
         /*Configuracion de variables para enviar el correo*/
         $mail_username="notifyasotarsochiqui@gmail.com";//Correo electronico saliente ejemplo: tucorreo@gmail.com
         $mail_userpassword="notify123";//Tu contraseña de gmail
         $mail_addAddress="casotarso@gmail.com";//correo electronico que recibira el mensaje
         $template="email_template.html";//Ruta de la plantilla HTML para enviar nuestro mensaje
-        
+
         /*Inicio captura de datos enviados por $_POST para enviar el correo */
         $mail_setFromEmail=$_POST['customer_email'];
         $mail_setFromName=$_POST['customer_name'];
         $txt_message=$_POST['message'];
         $mail_subject=$_POST['subject'];
-        
+
         sendemail($mail_username,$mail_userpassword,$mail_setFromEmail,$mail_setFromName,$mail_addAddress,$txt_message,$mail_subject,$template);//Enviar el mensaje
       }
     ?>

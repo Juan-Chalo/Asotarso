@@ -6,10 +6,10 @@
                  if (isset($_GET['id'])){
                     $id=intval($_GET['id']);
                     }
-                
+
                 include ("../Controladores/clasesControladores.php");
                 $usuarios= new DatosUsuario();
-                
+
                 if(isset($_POST) && !empty($_POST)){
                     $nombres = $usuarios->sanitize($_POST['nombreusuario']);
                     $rol = $usuarios->sanitize($_POST['rolusuario']);
@@ -17,16 +17,16 @@
                     $res = $usuarios->actualizarUsuario($nombres, $rol, $id_usuario);
                     if($res){
                         echo "<div class='alert alert-success' role='alert'>Usuario Actualizado!</div>";
-                        
+
                     }else{
                         echo "<div class='alert alert-danger' role='alert'>Error al Actualizar el Usuario :(</div>";
                     }
-                    
-                    ?>  
+
+                    ?>
                     <?php
                 }
                 $datos_usuario=$usuarios->single_record($id);
-            ?> -->
+            ?> 
 
 
  		<!-- Vertical Layout -->
@@ -52,19 +52,19 @@
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                 	<?php
-				 						 $query2=mysqli_query($connect,"SELECT idrolusuario, descripcion FROM rolusuario"); 
+				 						 $query2=mysqli_query($connect,"SELECT idrolusuario, descripcion FROM rolusuario");
 										?>
                                         <select class="form-control show-tick" name="rolusuario">
-                                        	<?php 
+                                        	<?php
 
 										while($datos = mysqli_fetch_array($query2))
-											{ 
+											{
 
 											?>
                                         	<option value="<?php echo $datos['idrolusuario']?>"><?php echo $datos['descripcion']; ?></option>
 
                                         	<?php
-												} 
+												}
 											?>
                                         </select>
                                     </div>
