@@ -249,13 +249,6 @@ if($_SESSION["usuario"] === null)
                       </ul>
                   </li>
 
-                    <li>
-                        <a href="#">
-                            <i class="material-icons">update</i>
-                            <span>Actividades Generales</span>
-                        </a>
-                    </li>
-
                       <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">donut_large</i>
