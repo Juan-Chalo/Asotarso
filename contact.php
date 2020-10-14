@@ -132,7 +132,7 @@
               }
             ?>
 
-            <form method="post" class="email-form">
+            <form method="post">
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre Completo"  required>
