@@ -13,7 +13,7 @@ if($_SESSION["usuario"] === null)
 
                  <?php
 						include ("../Controladores/clasesControladores.php");
-						
+
 
                        $documento="";
 
@@ -28,22 +28,22 @@ if($_SESSION["usuario"] === null)
                             $rutafinal="reportesMensuales"."/".$filename;
 
                             if (move_uploaded_file($ruta, $rutafinal)) {
-                                
+
                                 $documento=$rutafinal;
                             }
                         $res="INSERT INTO multas (DescripcionMulta, FechadeEmision, documento, tipo, Estado_idEstado) VALUES ('$descripcion',  NOW(), '$documento', '$tipo', '$estado')";
 
                             $resultado =  mysqli_query($connect, $res);
-            	
+
 							/*$res = $multa->crearReporteMultaMensual($descripcion, $documento, $tipo, $estado);*/
 							if($resultado){
 								echo "<div class='alert alert-success' role='alert'>Reporte Agregado!</div>";
 							}else{
 								echo "<div class='alert alert-danger' role='alert'>Error al agregar el REPORTE :(</div>";
 							}
-							
+
 						}
-	
+
 				?>
 
 
@@ -62,7 +62,7 @@ if($_SESSION["usuario"] === null)
                                 <div class="form-group">
                                     <div class="form-line">
                                        <!--  <input type="text" id="nombreusuario" name="nombreusuario" class="form-control" placeholder="Ingrese el nombre del Usuario"> -->
-                                        <input type="text" id="descripcion" name="descripcion" class="form-control"></input>
+                                        <input type="text" id="descripcion" name="descripcion" class="form-control" required></input>
                                          <input type="hidden" name="tipo" id="tipo" maxlength="100" value="1">
                                     </div>
                                 </div>
@@ -76,28 +76,28 @@ if($_SESSION["usuario"] === null)
                                  <label for="password">Subir Reporte</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="file" name="documento">
+                                        <input type="file" name="documento" required>
                                     </div>
                                 </div>
- 
+
                              <label for="password">Estado del Reporte</label>
                                <div class="body">
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                 	<?php
-				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado"); 
+				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
 										?>
-                                        <select class="form-control show-tick" name="estado">
-                                        	<?php 
+                                        <select class="form-control show-tick" name="estado" required>
+                                        	<?php
 
 										while($datos = mysqli_fetch_array($query2))
-											{ 
+											{
 
 											?>
                                         	<option value="<?php echo $datos['idEstado']?>"><?php echo $datos['Estado']; ?></option>
 
                                         	<?php
-												} 
+												}
 											?>
                                         </select>
                                     </div>

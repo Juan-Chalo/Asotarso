@@ -49,14 +49,14 @@ if($_SESSION["usuario"] === null)
                                 <label for="email_address">Asunto/título de la Circular</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="asunto" name="asunto" class="form-control" placeholder="Ingrese el Asunto de la Circular">
+                                        <input type="text" id="asunto" name="asunto" class="form-control" placeholder="Ingrese el Asunto de la Circular"required>
                                     </div>
                                 </div>
 
                                 <label for="email_address">Descripción de la Circular</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <textarea id="Descripción" name="Descripción" class="form-control" placeholder="Ingrese La Descripción de la actividad"></textarea>
+                                        <textarea id="Descripción" name="Descripción" class="form-control" placeholder="Ingrese La Descripción de la actividad" required></textarea>
 
                                     </div>
                                 </div>
@@ -64,21 +64,21 @@ if($_SESSION["usuario"] === null)
                                 <label for="email_address">Ingrese la Fecha para la actividad</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="date" id="Fecha" name="Fecha" class="form-control">
+                                        <input type="date" id="Fecha" name="Fecha" class="form-control" required>
                                     </div>
                                 </div>
 
                                 <label for="email_address">Lugar de la actividad</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="Lugar" name="Lugar" class="form-control" placeholder="Ingrese el Lugar donde se realizará la actividad">
+                                        <input type="text" id="Lugar" name="Lugar" class="form-control" placeholder="Ingrese el Lugar donde se realizará la actividad" required>
                                     </div>
                                 </div>
 
                                 <label for="email_address">Hora</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="hora" name="hora" class="form-control" placeholder="Ingrese la hora de inicio de la Actividad">
+                                        <input type="text" id="hora" name="hora" class="form-control" placeholder="Ingrese la hora de inicio de la Actividad" required>
                                     </div>
                                 </div>
 
@@ -89,7 +89,7 @@ if($_SESSION["usuario"] === null)
                                     <?php
                                          $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
                                         ?>
-                                        <select class="form-control show-tick" name="estado">
+                                        <select class="form-control show-tick" name="estado" required>
                                             <?php
 
                                         while($datos = mysqli_fetch_array($query2))

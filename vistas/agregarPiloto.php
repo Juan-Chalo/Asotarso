@@ -1,6 +1,6 @@
 <?php require_once "parteSuperior.php"?>
 
-<section class="content">	
+<section class="content">
     <div class="container-fluid">
 
              <?php
@@ -27,9 +27,9 @@
                             }else{
                                 echo "<div class='alert alert-danger' role='alert'>Error al agregar al Piloto:(</div>";
                             }
-                            
+
                         }
-    
+
                 ?>
 
 
@@ -51,55 +51,55 @@
                                 <label for="email_address">Nombre</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="nombrePiloto" name="nombrePiloto" class="form-control" placeholder="Ingrese el nombre del Piloto">
+                                        <input type="text" id="nombrePiloto" name="nombrePiloto" class="form-control" placeholder="Ingrese el nombre del Piloto" required>
                                     </div>
                                 </div>
                                 <label for="email_address">Apellidos</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="apellidosPiloto" name="apellidosPiloto" class="form-control" placeholder="Ingrese los apellidos del Piloto">
+                                        <input type="text" id="apellidosPiloto" name="apellidosPiloto" class="form-control" placeholder="Ingrese los apellidos del Piloto" required>
                                     </div>
                                 </div>
 
                                  <label for="email_address">DPI</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="codigo" name="codigo" class="form-control" placeholder="Ingrese el DPI del Piloto">
+                                        <input type="text" id="codigo" name="codigo" class="form-control" placeholder="Ingrese el DPI del Piloto" required>
                                     </div>
                                 </div>
 
                                 <label for="email_address">Direccion</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="direccionPiloto" name="direccionPiloto" class="form-control" placeholder="Ingrese la direccion del piloto">
+                                        <input type="text" id="direccionPiloto" name="direccionPiloto" class="form-control" placeholder="Ingrese la direccion del piloto" required>
                                     </div>
                                 </div>
 
                                  <label for="email_address">Telefono</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="telefonoPiloto" name="telefonoPiloto" class="form-control" placeholder="Ingrese el numero de telefono del piloto">
+                                        <input type="text" id="telefonoPiloto" name="telefonoPiloto" class="form-control" placeholder="Ingrese el numero de telefono del piloto" required>
                                     </div>
                                 </div>
 
                                 <label for="email_address">No. Licencia</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="licencia" name="licencia" class="form-control" placeholder="Ingrese el numero de licencia del piloto">
+                                        <input type="text" id="licencia" name="licencia" class="form-control" placeholder="Ingrese el numero de licencia del piloto" required>
                                     </div>
                                 </div>
 
                                 <label for="email_address">Fecha de vencimiento de la licencia</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="date" id="fechaVencimiento" name="fechaVencimiento" class="form-control">
+                                        <input type="date" id="fechaVencimiento" name="fechaVencimiento" class="form-control" required>
                                     </div>
                                 </div>
 
                                 <label for="email_address">Fecha de vencimiento de antecedentes del piloto</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="date" id="antecedentes" name="antecedentes" class="form-control">
+                                        <input type="date" id="antecedentes" name="antecedentes" class="form-control" required>
                                     </div>
                                 </div>
 
@@ -109,19 +109,19 @@
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                 	<?php
-                                         $query=mysqli_query($connect,"SELECT idTipoPiloto, DescripcionTipoPiloto  FROM tipopiloto"); 
+                                         $query=mysqli_query($connect,"SELECT idTipoPiloto, DescripcionTipoPiloto  FROM tipopiloto");
                                         ?>
-                                        <select class="form-control show-tick" name="tipopiloto">
-                                            <?php 
+                                        <select class="form-control show-tick" name="tipopiloto" required>
+                                            <?php
 
                                         while($datos = mysqli_fetch_array($query))
-                                            { 
+                                            {
 
                                             ?>
                                             <option value="<?php echo $datos['idTipoPiloto']?>"><?php echo $datos['DescripcionTipoPiloto']; ?></option>
 
                                             <?php
-                                                } 
+                                                }
                                             ?>
                                         </select>
                                     </div>
@@ -133,19 +133,19 @@
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                 	<?php
-				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado"); 
+				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
 										?>
-                                        <select class="form-control show-tick" name="estado">
-                                        	<?php 
+                                        <select class="form-control show-tick" name="estado" required>
+                                        	<?php
 
 										while($datos2 = mysqli_fetch_array($query2))
-											{ 
+											{
 
 											?>
                                         	<option value="<?php echo $datos2['idEstado']?>"><?php echo $datos2['Estado']; ?></option>
 
                                         	<?php
-												} 
+												}
 											?>
                                         </select>
                                     </div>

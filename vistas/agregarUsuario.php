@@ -20,16 +20,16 @@ if($_SESSION["usuario"] === null)
 							$password = $usuarios->sanitize(sha1($_POST['password']));
 							$rol = $usuarios->sanitize($_POST['rolusuario']);
 							$estado = $usuarios->sanitize($_POST['estado']);
-							
+
 							$res = $usuarios->crearUsuario($nombres, $password, $rol, $estado);
 							if($res){
 								echo "<div class='alert alert-success' role='alert'>Usuario Agregado!</div>";
 							}else{
 								echo "<div class='alert alert-danger' role='alert'>Error al agregar Usuario :(</div>";
 							}
-							
+
 						}
-	
+
 				?>
 
 
@@ -47,13 +47,13 @@ if($_SESSION["usuario"] === null)
                                 <label for="email_address">Nombre de Usuario</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="nombreusuario" name="nombreusuario" class="form-control" placeholder="Ingrese el nombre del Usuario">
+                                        <input type="text" id="nombreusuario" name="nombreusuario" class="form-control" placeholder="Ingrese el nombre del Usuario" required>
                                     </div>
                                 </div>
                                 <label for="password">Contraseña</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese la Contraseña Para el Usuario">
+                                        <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese la Contraseña Para el Usuario" required>
                                     </div>
                                 </div>
 
@@ -62,19 +62,19 @@ if($_SESSION["usuario"] === null)
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                 	<?php
-				 						 $query2=mysqli_query($connect,"SELECT idrolusuario, descripcion FROM rolusuario"); 
+				 						 $query2=mysqli_query($connect,"SELECT idrolusuario, descripcion FROM rolusuario");
 										?>
-                                        <select class="form-control show-tick" name="rolusuario">
-                                        	<?php 
+                                        <select class="form-control show-tick" name="rolusuario" required>
+                                        	<?php
 
 										while($datos = mysqli_fetch_array($query2))
-											{ 
+											{
 
 											?>
                                         	<option value="<?php echo $datos['idrolusuario']?>"><?php echo $datos['descripcion']; ?></option>
 
                                         	<?php
-												} 
+												}
 											?>
                                         </select>
                                     </div>
@@ -87,19 +87,19 @@ if($_SESSION["usuario"] === null)
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                 	<?php
-				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado"); 
+				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
 										?>
-                                        <select class="form-control show-tick" name="estado">
-                                        	<?php 
+                                        <select class="form-control show-tick" name="estado" required>
+                                        	<?php
 
 										while($datos = mysqli_fetch_array($query2))
-											{ 
+											{
 
 											?>
                                         	<option value="<?php echo $datos['idEstado']?>"><?php echo $datos['Estado']; ?></option>
 
                                         	<?php
-												} 
+												}
 											?>
                                         </select>
                                     </div>

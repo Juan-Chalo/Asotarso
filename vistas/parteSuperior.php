@@ -164,7 +164,7 @@ if($_SESSION["usuario"] === null)
                             <span>Gestion de Socios</span>
                         </a>
                     </li>
-                      <li>
+                   <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">trending_down</i>
                             <span>Reportes Financieros</span>
@@ -211,13 +211,6 @@ if($_SESSION["usuario"] === null)
 
                       </ul>
                   </li>
-
-                   <li>
-                        <a href="#">
-                            <i class="material-icons">pie_chart</i>
-                            <span>Gestion de Pilotos</span>
-                        </a>
-                    </li>
                     <li>
                         <a href="circularessocios.php">
                             <i class="material-icons">map</i>
@@ -272,30 +265,36 @@ if($_SESSION["usuario"] === null)
 
                         </ul>
                     </li>
-
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">donut_large</i>
-                            <span>Gestion de Pilotos </span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>Pilotos</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="mostrarPilotos.php">Lista de Pilotos</a>
-                                    </li>
-                                    <li>
-                                        <a href="agregarPiloto.php">Agregar Pilotos </a>
-                                    </li>
-                                </ul>
-                            </li>
+                      <a href="javascript:void(0);" class="menu-toggle">
+                          <i class="material-icons">donut_large</i>
+                          <span>Gestion de Pilotos</span>
+                      </a>
+                      <ul class="ml-menu">
+                          <li>
+                              <a href="javascript:void(0);" class="menu-toggle">
+                                  <span>Pilotos</span>
+                              </a>
+                              <ul class="ml-menu">
+                                  <li>
+                                      <a href="mostrarPilotos.php">Lista de Pilotos</a>
+                                  </li>
+                                  <li>
+                                      <a href="agregarPiloto.php">Agregar Piloto</a>
+                                  </li>
+                              </ul>
+                          </li>
 
 
-                        </ul>
-                    </li>
+                      </ul>
+                  </li>
+
+                <li>
+                    <a href="asignarTaxiPilotoSocio.php">
+                        <i class="material-icons">donut_large</i>
+                        <span>Asignacion Socio-Taxi</span>
+                    </a>
+                </li>
 
                     <li class="header">Sobre Nosotros</li>
                     <li>

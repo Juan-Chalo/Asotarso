@@ -51,7 +51,7 @@ if($_SESSION["usuario"] === null)
                                 <label for="ApellidosSocios">Placa del Taxi:</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="Placa" name="Placa" class="form-control" placeholder="Ingrese la Placa del Taxi">
+                                        <input type="text" id="Placa" name="Placa" class="form-control" placeholder="Ingrese la Placa del Taxi" required>
                                     </div>
                                 </div>
 
@@ -62,7 +62,7 @@ if($_SESSION["usuario"] === null)
                                 	<?php
 				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
 										?>
-                                        <select class="form-control show-tick" name="estado">
+                                        <select class="form-control show-tick" name="estado" required>
                                         	<?php
 
 										while($datos = mysqli_fetch_array($query2))

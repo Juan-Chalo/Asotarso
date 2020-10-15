@@ -48,31 +48,31 @@ if($_SESSION["usuario"] === null)
                                 <label for="NombreSocio">Nombres del Socio</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="NombreSocio" name="NombreSocio" class="form-control" placeholder="Ingrese los nombres del Socio">
+                                        <input type="text" id="NombreSocio" name="NombreSocio" class="form-control" placeholder="Ingrese los nombres del Socio" required>
                                     </div>
                                 </div>
                                 <label for="ApellidosSocios">Apellidos</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="ApellidosSocios" name="ApellidosSocios" class="form-control" placeholder="Ingrese los apellidos del socio">
+                                        <input type="text" id="ApellidosSocios" name="ApellidosSocios" class="form-control" placeholder="Ingrese los apellidos del socio" required>
                                     </div>
                                 </div>
                                 <label for="TelefonoSocios">Telefono Socios</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="TelefonoSocios" name="TelefonoSocios" class="form-control" placeholder="Ingrese el numero telefonico del socio">
+                                        <input type="text" id="TelefonoSocios" name="TelefonoSocios" class="form-control" placeholder="Ingrese el numero telefonico del socio" required>
                                     </div>
                                 </div>
                                 <label for="DireccionSocio">Direccion Socio</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="DireccionSocio" name="DireccionSocio" class="form-control" placeholder="Ingrese la direccion del socio">
+                                        <input type="text" id="DireccionSocio" name="DireccionSocio" class="form-control" placeholder="Ingrese la direccion del socio" required>
                                     </div>
                                 </div>
                                 <label for="CorreoSocio">Correo Electronico</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="CorreoSocio" name="CorreoSocio" class="form-control" placeholder="Ingrese los apellidos del socio">
+                                        <input type="text" id="CorreoSocio" name="CorreoSocio" class="form-control" placeholder="Ingrese los apellidos del socio" required>
                                     </div>
                                 </div>
 
@@ -84,7 +84,7 @@ if($_SESSION["usuario"] === null)
                                 	<?php
 				 						 $query2=mysqli_query($connect,"SELECT idEstado, Estado FROM estado");
 										?>
-                                        <select class="form-control show-tick" name="estado">
+                                        <select class="form-control show-tick" name="estado" required>
                                         	<?php
 
 										while($datos = mysqli_fetch_array($query2))
