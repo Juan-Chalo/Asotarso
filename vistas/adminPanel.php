@@ -303,6 +303,13 @@ if($_SESSION["usuario"] === null)
                     </a>
                 </li>
 
+                <li>
+                    <a href="comentarios.php">
+                        <i class="material-icons">map</i>
+                        <span>Comentarios</span>
+                    </a>
+                </li>
+
                     <li class="header">Sobre Nosotros</li>
                     <li>
                         <a href="javascript:void(0);">
@@ -519,11 +526,11 @@ if($_SESSION["usuario"] === null)
                         </div>
                         <div class="content">
                           <?php
-                            $consultacoment = "SELECT * FROM comentarios";
+                            $consultacoment = "SELECT * FROM comentarios where estado=1";
                             $resultadocoment = mysqli_query($connect,$consultacoment);
                             $totalcomentarios = mysqli_num_rows($resultadocoment);
                             ?>
-                            <div class="text">Comentarios/Quejas</div>
+                            <div class="text">Comentarios no leidos</div>
                             <div class="number count-to" data-from="0" data-to="<?php echo $totalcomentarios;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>

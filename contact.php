@@ -118,7 +118,8 @@
               $correo = $comentario->sanitize($_POST['correo']);
               $asunto = $comentario->sanitize($_POST['asunto']);
               $mensaje = $comentario->sanitize($_POST['mensaje']);
-              $res = $comentario->insertarComentario($nombre,$correo,$asunto,$mensaje);
+              $estado = $comentario->sanitize($_POST['estado']);
+              $res = $comentario->insertarComentario($nombre,$correo,$asunto,$mensaje,$estado);
               if($res){
               echo "<div class='alert alert-success' role='alert'>Mensaje Enviado! Gracias por Escribirnos! Nos comunicaremos lo mas pronto posible, Dios le bendiga!</div>";
               }else{
@@ -131,6 +132,7 @@
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre Completo"  required>
+                    <input type="hidden" name="estado" id="estado" value="1">
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">

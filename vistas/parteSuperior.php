@@ -296,6 +296,13 @@ if($_SESSION["usuario"] === null)
                     </a>
                 </li>
 
+                <li>
+                    <a href="comentarios.php">
+                        <i class="material-icons">map</i>
+                        <span>Comentarios</span>
+                    </a>
+                </li>
+
                     <li class="header">Sobre Nosotros</li>
                     <li>
                         <a href="javascript:void(0);">

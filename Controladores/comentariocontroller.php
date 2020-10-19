@@ -24,8 +24,8 @@ class Comentario
   }
 
 
-  public function insertarComentario($nombre,$correo,$asunto,$mensaje){
-    $sql = "INSERT INTO `comentarios` (nombre, correo, asunto, mensaje) VALUES ('$nombre', '$correo', '$asunto', '$mensaje')";
+  public function insertarComentario($nombre,$correo,$asunto,$mensaje,$estado){
+    $sql = "INSERT INTO `comentarios` (nombre, correo, asunto, mensaje, estado) VALUES ('$nombre', '$correo', '$asunto', '$mensaje', '$estado')";
     $res = mysqli_query($this->con, $sql);
     if($res){
       return true;
@@ -42,7 +42,7 @@ class Comentario
       }
 
     public function verComentarios(){
-    $sql = "SELECT * FROM comentarios";
+    $sql = "SELECT * FROM comentarios where estado=1";
     $res = mysqli_query($this->con, $sql);
     return $res;
   }
@@ -52,6 +52,16 @@ class Comentario
     $res = mysqli_query($this->con, $sql);
     return $res;
   }
+
+  public function borrarComentario($id){
+  $sql = "UPDATE comentarios SET estado = 2 WHERE id_comentario=$id";
+  $res = mysqli_query($this->con, $sql);
+  if($res){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 }
 $connect = mysqli_connect("localhost","asotarsochiqui","asotarsoChiqui20!","asotarsochiqui");
