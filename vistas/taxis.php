@@ -16,8 +16,6 @@
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable"><br>
                                     <thead>
                                         <tr>
-
-                                            <th>Id del Taxi</th>
                                             <th>Numero del Taxi</th>
                                             <th>Placa del Taxi</th>
                                             <th>Opcion1</th>
@@ -26,7 +24,6 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                          <th>Id del Taxi</th>
                                           <th>Numero del Taxi</th>
                                           <th>Placa del Taxi</th>
                                           <th>Opcion1</th>
@@ -51,8 +48,6 @@
 
 									?>
                                         <tr>
-
-                                            <td><?php echo $id;?></td>
                                             <td><?php echo $Numero;?></td>
                                             <td><?php echo $Placa;?></td>
                                             <td>

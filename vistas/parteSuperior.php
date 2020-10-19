@@ -203,7 +203,7 @@ if($_SESSION["usuario"] === null)
                                       <a href="taxis.php">Lista de Taxis</a>
                                   </li>
                                   <li>
-                                      <a href="AgregarTaxi.php">Agregar Taxi</a>
+                                      <a href="agregarTaxi.php">Agregar Taxi</a>
                                   </li>
                               </ul>
                           </li>
