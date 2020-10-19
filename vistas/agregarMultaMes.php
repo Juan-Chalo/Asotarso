@@ -53,7 +53,7 @@ if($_SESSION["usuario"] === null)
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Agregar Reporte Mensual de Multas
+                                Agregar Reporte Mensual de Cuotas
                             </h2>
                         </div>
                         <div class="body">

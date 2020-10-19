@@ -182,9 +182,9 @@ if($_SESSION["usuario"] === null)
                                     <span>Socios/Directiva</span>
                                 </a>
                                 <ul class="ml-menu">
-                                    <li>
+                                  <!--  <li>
                                         <a href="finanzasSocios.php">Reporte Financieros Socios</a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <a href="finanzasDirectiva.php">Reporte Financieros Directiva</a>
                                     </li>
