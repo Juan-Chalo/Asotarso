@@ -110,6 +110,23 @@
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
+            <?php
+              include ("Controladores/comentariocontroller.php");
+              $comentario= new Comentario();
+              if(isset($_POST) && !empty($_POST)){
+              $nombre = $comentario->sanitize($_POST['nombre']);
+              $correo = $comentario->sanitize($_POST['correo']);
+              $asunto = $comentario->sanitize($_POST['asunto']);
+              $mensaje = $comentario->sanitize($_POST['mensaje']);
+              $res = $comentario->insertarComentario($nombre,$correo,$asunto,$mensaje);
+              if($res){
+              echo "<div class='alert alert-success' role='alert'>Mensaje Enviado! Gracias por Escribirnos! Nos comunicaremos lo mas pronto posible, Dios le bendiga!</div>";
+              }else{
+              echo "<div class='alert alert-danger' role='alert'>Error al Enviar el Mensaje :(</div>";
+              }
+
+              }
+            ?>
             <form method="post">
               <div class="form-row">
                 <div class="col-md-6 form-group">
@@ -140,23 +157,6 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-  <?php
-    include ("controladores/comentariocontroller.php");
-    $comentario= new Comentario();
-    if(isset($_POST) && !empty($_POST)){
-    $nombre = $comentario->sanitize($_POST['nombre']);
-    $correo = $comentario->sanitize($_POST['correo']);
-    $asunto = $comentario->sanitize($_POST['asunto']);
-    $mensaje = $comentario->sanitize($_POST['mensaje']);
-    $res = $comentario->insertarComentario($nombre,$correo,$asunto,$mensaje);
-    if($res){
-    echo "<div class='alert alert-success' role='alert'>Mensaje Enviado! Gracias por Escribirnos! Nos comunicaremos lo mas pronto posible, Dios le bendiga!</div>";
-    }else{
-    echo "<div class='alert alert-danger' role='alert'>Error al Enviar el Mensaje :(</div>";
-    }
-
-    }
-  ?>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
