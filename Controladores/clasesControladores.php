@@ -665,7 +665,7 @@ class GestionTaxis
       //Metodo para Crear Socio nuevo
 
         public function asignarTaxiPiloto($id_taxi,$id_usuario,$id_piloto){
-        $sql = "INSERT INTO `socios_has_taxi` (Taxi_idTaxi, Usuarios_idUsuarios, Pilotos_idPilotos) VALUES ('$id_taxi', '$id_usuario','$id_piloto')";
+        $sql = "INSERT INTO `socios_has_Taxi` (Taxi_idTaxi, Usuarios_idUsuarios, Pilotos_idPilotos) VALUES ('$id_taxi', '$id_usuario','$id_piloto')";
         $res = mysqli_query($this->con, $sql);
         if($res){
           return true;
