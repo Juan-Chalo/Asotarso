@@ -882,7 +882,7 @@ if($_SESSION["usuario"] === null)
                                           $id=$row->idSocios;
                     											$nombre=$row->NombreSocio;
                                           $apellidos=$row->ApellidosSocio;
-                                          if ($row->Estado_idEstado=1) {
+                                          if ($row->Estado_idEstado == 1) {
                                             $estado = "ACTIVO";
                                           }else {
                                               $estado = "INACTIVO";
