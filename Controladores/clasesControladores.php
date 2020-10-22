@@ -784,13 +784,13 @@ class GestionTaxis
         		//metodo de lectura
 
         		public function verTaxisAsignados($id_usuario){
-              $sql = "SELECT * FROM socios_has_taxi INNER JOIN taxi ON socios_has_taxi.Taxi_idTaxi = taxi.idTaxi INNER JOIN pilotos ON socios_has_taxi.Pilotos_idPilotos = pilotos.idPilotos WHERE Usuarios_idUsuarios='$id_usuario';";
+              $sql = "SELECT * FROM socios_has_Taxi INNER JOIN taxi ON socios_has_Taxi.Taxi_idTaxi = taxi.idTaxi INNER JOIN pilotos ON socios_has_Taxi.Pilotos_idPilotos = pilotos.idPilotos WHERE Usuarios_idUsuarios='$id_usuario';";
         			$res = mysqli_query($this->con, $sql);
         			return $res;
         		}
 
             public function verPilotosAsignados($id_usuario){
-              $sql = "SELECT idPilotos, NombrePilotos, ApellidosPilotos FROM pilotos INNER JOIN socios_has_taxi ON pilotos.idPilotos = socios_has_taxi.Pilotos_idPilotos WHERE Usuarios_idUsuarios='$id_usuario' AND Estado_idEstado=1;";
+              $sql = "SELECT idPilotos, NombrePilotos, ApellidosPilotos FROM pilotos INNER JOIN socios_has_Taxi ON pilotos.idPilotos = socios_has_Taxi.Pilotos_idPilotos WHERE Usuarios_idUsuarios='$id_usuario' AND Estado_idEstado=1;";
               $res = mysqli_query($this->con, $sql);
               return $res;
             }
@@ -803,7 +803,7 @@ class GestionTaxis
             }
 
             public function verDetalleSocio($id){
-                $sql = "SELECT * FROM socios_has_taxi INNER JOIN taxi ON socios_has_taxi.Taxi_idTaxi = taxi.idTaxi INNER JOIN pilotos ON socios_has_taxi.Pilotos_idPilotos = pilotos.idPilotos WHERE Usuarios_idUsuarios='$id';";
+                $sql = "SELECT * FROM socios_has_Taxi INNER JOIN taxi ON socios_has_Taxi.Taxi_idTaxi = taxi.idTaxi INNER JOIN pilotos ON socios_has_Taxi.Pilotos_idPilotos = pilotos.idPilotos WHERE Usuarios_idUsuarios='$id';";
               $res = mysqli_query($this->con, $sql);
               return $res ;
             }
