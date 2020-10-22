@@ -296,11 +296,28 @@ if($_SESSION["usuario"] === null)
                       </ul>
                   </li>
 
-                <li>
-                    <a href="asignarTaxiPilotoSocio.php">
+                  <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">donut_large</i>
-                        <span>Asignacion Socio-Taxi</span>
+                        <span>Asignacion Socio-Taxi-Piloto</span>
                     </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <span>Asignaciones</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="listaTaxisPilotosSocio.php">Lista de Asignaciones</a>
+                                </li>
+                                <li>
+                                    <a href="asignarTaxiPilotoSocio.php">Nueva Asignacion</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
                 </li>
 
                 <li>
@@ -675,7 +692,7 @@ if($_SESSION["usuario"] === null)
                       </div>
                       <div class="content">
                         <?php
-                          $consulta11 = "SELECT * FROM pilotos where TipoPiloto_idTipoPiloto=1";
+                          $consulta11 = "SELECT * FROM pilotos where TipoPiloto_idTipoPiloto=1 AND Estado_idEstado=1";
                           $resultado11 = mysqli_query($connect,$consulta11);
                           $total11 = mysqli_num_rows($resultado11);
                           ?>
@@ -692,7 +709,7 @@ if($_SESSION["usuario"] === null)
                       </div>
                       <div class="content">
                         <?php
-                          $consulta12 = "SELECT * FROM pilotos where TipoPiloto_idTipoPiloto=2";
+                          $consulta12 = "SELECT * FROM pilotos where TipoPiloto_idTipoPiloto=2 AND Estado_idEstado=1";
                           $resultado12 = mysqli_query($connect,$consulta12);
                           $total12 = mysqli_num_rows($resultado12);
                           ?>
@@ -931,7 +948,7 @@ if($_SESSION["usuario"] === null)
                                             <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                                 <thead>
                                                     <tr>
-                                                        <th>ID_Circular</th>
+                                                        <th>No.Circular</th>
                                                         <th>Asunto de la Circular</th>
                                                         <th>Fecha</th>
                                                         <th>Opcion1</th>
@@ -940,7 +957,7 @@ if($_SESSION["usuario"] === null)
                                                 </thead>
                                                 <tfoot>
                                                     <tr>
-                                                      <th>ID_Circular</th>
+                                                      <th>No.Circular</th>
                                                       <th>Asunto de la Circular</th>
                                                       <th>Fecha</th>
                                                       <th>Opcion1</th>

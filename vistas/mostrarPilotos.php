@@ -7,7 +7,7 @@
                         <div class="header">
                             <h2>
                                 Listados de Pilotos
-                            </h2><br> 
+                            </h2><br>
                         </div>
 
                         <div class="body">
@@ -16,7 +16,7 @@
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable"><br>
                                     <thead>
                                         <tr>
-                                            
+
                                             <th>Nombre</th>
                                             <th>Apellidos</th>
                                             <th>telefono</th>
@@ -25,7 +25,7 @@
                                             <th>Tipo Piloto</th>
                                             <th>Opcion1</th>
                                             <th>Opcion2</th>
-                                            
+
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -38,11 +38,11 @@
                                             <th>Tipo Piloto</th>
                                             <th>Opcion1</th>
                                             <th>Opcion2</th>
-                                            
+
                                         </tr>
                                     </tfoot>
 
-                                    	<?php 
+                                    	<?php
 												include ('../Controladores/clasesControladores.php');
 												$pilotosoP = new Piloto();
 												$listado=$pilotosoP->leerPiloto();
@@ -51,25 +51,25 @@
 
                                     <tbody>
 
-                                    	<?php 
+                                    	<?php
 										while ($row=mysqli_fetch_object($listado)){
 											$id=$row->idPilotos;
 											$nombre=$row->NombrePilotos;
 											$apellidos=$row->ApellidosPilotos;
-											$telefono=$row->Telefono;	
+											$telefono=$row->Telefono;
 											$Vlicencia=$row->FechaVencimientoLicencia;
 											$Vantecedentes=$row->FechaVencimientoAntecedentes;
 
-											if ($row->TipoPiloto_idTipoPiloto=1) {
-												$tipo="Titular";
-											}else{
-												$tipo="Suplente";
-											}
+											if ($row->TipoPiloto_idTipoPiloto == 1) {
+												$tipo = "Piloto Titular";
+											}elseif ($row->TipoPiloto_idTipoPiloto == 2) {
+                        $tipo = "Piloto Suplente";
+                      }
 
-																					
+
 									?>
                                         <tr>
-                                            
+
                                             <td><?php echo $nombre;?></td>
                                             <td><?php echo $apellidos;?></td>
                                             <td><?php echo $telefono;?></td>
@@ -81,7 +81,7 @@
                                             </td>
                                             <td>
                                             	<a href="eliminarPiloto.php?id=<?php echo $id;?>" type="button" class="btn btn-danger waves-effect">Eliminar</a>
-                                            </td>                                           
+                                            </td>
                                         </tr>
                                         <?php
 												}
@@ -101,4 +101,3 @@
 
 
 <?php require_once "parteInferior.php"?>
-

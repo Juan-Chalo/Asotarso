@@ -25,7 +25,6 @@
                                             <th>Direccion</th>
                                             <th>Correo</th>
                                             <th>Opcion1</th>
-                                            <th>Opcion2</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -37,7 +36,6 @@
                                           <th>Direccion</th>
                                           <th>Correo</th>
                                           <th>Opcion1</th>
-                                          <th>Opcion2</th>
                                         </tr>
                                     </tfoot>
 
@@ -66,9 +64,9 @@
                                             <td><?php echo $telefono;?></td>
                                             <td><?php echo $direccion;?></td>
                                             <td><?php echo $correo;?></td>
-                                            <td>
+                                          <!--  <td>
                                               <a href="detalleSocios.php?id=<?php echo $id;?>" type="button" class="btn btn-info waves-effect">Ver Detalles</a>
-                                            </td>
+                                            </td> -->
                                             <td>
                                               <a href="eliminarSocios.php?id=<?php echo $id;?>" type="button" class="btn btn-danger waves-effect">Eliminar</a>
                                             </td>

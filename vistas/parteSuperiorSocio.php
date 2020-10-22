@@ -15,7 +15,7 @@ if($_SESSION["usuario"] === null)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>AsotarsoChiqui | Administracion</title>
+    <title>AsotarsoChiqui | Socios</title>
     <!-- Favicon-->
      <link href=" ../assets/img/iconotaxi.ico" rel="icon">
 
@@ -48,7 +48,7 @@ if($_SESSION["usuario"] === null)
     <link href=" ../css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="theme-red">
+<body class="theme-orange">
 
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
@@ -71,7 +71,7 @@ if($_SESSION["usuario"] === null)
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="adminPanel.php">ASOTARSO CHIQUIMULILLA S.R</a>
+                <a class="navbar-brand" href="adminPanelSocio.php">SOCIOS / ASOTARSO CHIQUIMULILLA S.R</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -123,21 +123,15 @@ if($_SESSION["usuario"] === null)
                 <ul class="list">
                     <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active">
-                        <a href="adminPanel.php">
+                        <a href="adminPanelSocio.php">
                             <i class="material-icons">home</i>
                             <span>INICIO</span>
                         </a>
                     </li>
                     <li>
-                        <a href="usuarios.php">
-                            <i class="material-icons">assignment</i>
-                            <span>Gestion de Usuarios</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">trending_down</i>
-                            <span>Reportes Multas</span>
+                            <span>Reportes de Multas</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
@@ -146,10 +140,10 @@ if($_SESSION["usuario"] === null)
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="agregarMultaMes.php">Cuotas Mensuales</a>
+                                        <a href="cuotasMensualesSocio.php">Ver R. Cuotas Mensuales</a>
                                     </li>
                                     <li>
-                                        <a href="agregarMultaOrganizacion.php">Multas Organiacion</a>
+                                        <a href="multasOrganizacionSocio.php">Ver R. Multas Organiacion</a>
                                     </li>
                                 </ul>
                             </li>
@@ -157,37 +151,6 @@ if($_SESSION["usuario"] === null)
 
                         </ul>
                     </li>
-
-                     <li>
-                        <a href="gestionSocios.php">
-                            <i class="material-icons">assignment</i>
-                            <span>Gestion de Socios</span>
-                        </a>
-                    </li>
-                   <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">trending_down</i>
-                            <span>Reportes Financieros</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>Socios/Directiva</span>
-                                </a>
-                                <ul class="ml-menu">
-                                  <!--  <li>
-                                        <a href="finanzasSocios.php">Reporte Financieros Socios</a>
-                                    </li> -->
-                                    <li>
-                                        <a href="finanzasDirectiva.php">Reporte Financieros Directiva</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-                        </ul>
-                    </li>
-
                     <li>
                       <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">pie_chart</i>
@@ -196,14 +159,11 @@ if($_SESSION["usuario"] === null)
                       <ul class="ml-menu">
                           <li>
                               <a href="javascript:void(0);" class="menu-toggle">
-                                  <span>Taxis</span>
+                                  <span>Mis Taxis</span>
                               </a>
                               <ul class="ml-menu">
                                   <li>
-                                      <a href="taxis.php">Lista de Taxis</a>
-                                  </li>
-                                  <li>
-                                      <a href="agregarTaxi.php">Agregar Taxi</a>
+                                      <a href="taxisSocio.php">Lista de Taxis</a>
                                   </li>
                               </ul>
                           </li>
@@ -211,13 +171,6 @@ if($_SESSION["usuario"] === null)
 
                       </ul>
                   </li>
-                    <li>
-                        <a href="circularessocios.php">
-                            <i class="material-icons">map</i>
-                            <span>Circulares Socios</span>
-                        </a>
-                    </li>
-
                     <li>
                       <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">update</i>
@@ -230,10 +183,7 @@ if($_SESSION["usuario"] === null)
                               </a>
                               <ul class="ml-menu">
                                   <li>
-                                      <a href="actividadesGenerales.php">Lista de Actividades</a>
-                                  </li>
-                                  <li>
-                                      <a href="agregarActividadGeneral.php">Agregar Actividad</a>
+                                      <a href="actividadesGeneralesSocio.php">Lista de Actividades</a>
                                   </li>
                               </ul>
                           </li>
@@ -245,7 +195,7 @@ if($_SESSION["usuario"] === null)
                       <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">donut_large</i>
-                            <span>Gestion de Repuestos</span>
+                            <span>Repuestos</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
@@ -254,10 +204,7 @@ if($_SESSION["usuario"] === null)
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="mostrarProducto.php">Lista de Repuestos</a>
-                                    </li>
-                                    <li>
-                                        <a href="agregarProducto.php">Agregar Repuesto</a>
+                                        <a href="vistaRepuestos.php">Lista de Repuestos</a>
                                     </li>
                                 </ul>
                             </li>
@@ -268,19 +215,16 @@ if($_SESSION["usuario"] === null)
                     <li>
                       <a href="javascript:void(0);" class="menu-toggle">
                           <i class="material-icons">donut_large</i>
-                          <span>Gestion de Pilotos</span>
+                          <span>Pilotos</span>
                       </a>
                       <ul class="ml-menu">
                           <li>
                               <a href="javascript:void(0);" class="menu-toggle">
-                                  <span>Pilotos</span>
+                                  <span>Mis Pilotos</span>
                               </a>
                               <ul class="ml-menu">
                                   <li>
-                                      <a href="mostrarPilotos.php">Lista de Pilotos</a>
-                                  </li>
-                                  <li>
-                                      <a href="agregarPiloto.php">Agregar Piloto</a>
+                                      <a href="pilotosSocio.php">Lista de Pilotos</a>
                                   </li>
                               </ul>
                           </li>
@@ -289,42 +233,11 @@ if($_SESSION["usuario"] === null)
                       </ul>
                   </li>
 
-                  <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">donut_large</i>
-                        <span>Asignacion Socio-Taxi-Piloto</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <span>Asignaciones</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="listaTaxisPilotosSocio.php">Lista de Asignaciones</a>
-                                </li>
-                                <li>
-                                    <a href="asignarTaxiPilotoSocio.php">Nueva Asignacion</a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="comentarios.php">
-                        <i class="material-icons">map</i>
-                        <span>Comentarios</span>
-                    </a>
-                </li>
-
                     <li class="header">Sobre Nosotros</li>
                     <li>
                         <a href="javascript:void(0);">
                             <i class="material-icons col-red">donut_large</i>
-                            <span> SISTEMA-ASOTARSO</span>
+                            <span>ASOTARSO / SOCIOS</span>
                         </a>
                     </li>
                     <li>
@@ -345,7 +258,7 @@ if($_SESSION["usuario"] === null)
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2020 <a href="javascript:void(0);">Asotarso - Chiquimulilla </a>.
+                    &copy; 2020 <a href="javascript:void(0);">Asotarso - Chiquimulilla / Socios</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 0.0.1
@@ -357,7 +270,7 @@ if($_SESSION["usuario"] === null)
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
-        <!-- Right Sidebar -->
+        <!-- Right Sidebar
         <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">Colores</a></li>
@@ -482,5 +395,5 @@ if($_SESSION["usuario"] === null)
                 </div>
             </div>
         </aside>
-        <!-- #END# Right Sidebar -->
+        #END# Right Sidebar -->
     </section>

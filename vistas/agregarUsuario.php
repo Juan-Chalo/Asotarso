@@ -8,8 +8,6 @@ if($_SESSION["usuario"] === null)
 ?>
 <?php require_once "parteSuperior.php"?>
  <section class="content">
-    <div class="container-fluid">
-
 
                  <?php
 						include ("../Controladores/clasesControladores.php");
@@ -114,7 +112,9 @@ if($_SESSION["usuario"] === null)
                     </div>
                 </div>
             </div>
-            <!-- #END# Vertical Layout -->
+            <div class="preloader">
+
+                      <!-- #END# Vertical Layout -->
 
 
 

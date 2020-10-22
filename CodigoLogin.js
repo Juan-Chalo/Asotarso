@@ -5,11 +5,11 @@ $(document).ready(function($){
 
     	var usuario = $('#usuario').val();
     	var password = $('#password').val();
-    	
+
     	if (usuario.length == ""  || password == "") {
-            
+
             Swal.fire({
-                
+
                 type:'warning',
                 title:'Llene Ambos Campos',
             });
@@ -35,10 +35,10 @@ $(document).ready(function($){
 
         			}
 
-                    if (data == 1){ 
+                    if (data == 1){
 
         				Swal.fire({
-                           
+
                            type:'success',
                            title:'Bienvenido Administrador!',
                            confirmButtonColor:'#3885d6',
@@ -52,10 +52,10 @@ $(document).ready(function($){
         				});
 
         			}
-                        if (data == 2){ 
+                        if (data == 2){
 
                         Swal.fire({
-                           
+
                            type:'success',
                            title:'Bienvenido Socio!',
                            confirmButtonColor:'#3885d6',
@@ -64,18 +64,17 @@ $(document).ready(function($){
                         }).then((result)=> {
 
                             if (result.value) {
-                                window.location.href = "#"
+                                window.location.href = "vistas/adminPanelSocio.php"
                             }
                         });
 
                     }
-        		} 
+        		}
 
 
-        	}); 	
+        	});
 
       }
     });
 
-}); 
-
+});

@@ -8,7 +8,7 @@
                         <div class="header">
                             <h2>
                                 Usuarios Activos en el Sistema
-                            </h2><br> 
+                            </h2><br>
                             <a href="agregarUsuario.php" type="button" class="btn btn-success waves-effect">Agregar Usuario</a>
 
                         </div>
@@ -38,7 +38,7 @@
                                         </tr>
                                     </tfoot>
 
-                                    	<?php 
+                                    	<?php
 												include ('../Controladores/clasesControladores.php');
 												$usuarios = new DatosUsuario();
 												$listado=$usuarios->leerUsuarios();
@@ -47,7 +47,7 @@
 
                                     <tbody>
 
-                                    	<?php 
+                                    	<?php
 										while ($row=mysqli_fetch_object($listado)){
 											$id=$row->idUsuarios;
 											$nombres=$row->nombreusuario;
@@ -55,7 +55,7 @@
 												$rolusuario="Administrador";
 											}elseif ($row->rolusuario_idrolusuario == 2) {
 												$rolusuario="Socio";
-											}											
+											}
 									?>
                                         <tr>
                                             <td><?php echo $id;?></td>
@@ -70,7 +70,7 @@
                                              <td>
                                             	<a href="nuevaContraUsuario.php?id=<?php echo $id;?>" type="button" class="btn btn-warning waves-effect">Actualizar</a>
                                             </td>
-                                            
+
                                         </tr>
                                         <?php
 												}

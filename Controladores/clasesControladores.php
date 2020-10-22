@@ -309,6 +309,12 @@
         return $res;
       }
 
+      public function verSociosActivos(){
+        $sql = "SELECT * FROM usuarios WHERE rolusuario_idrolusuario=2 AND Estado_idEstado=1";
+        $res = mysqli_query($this->con, $sql);
+        return $res;
+      }
+
 }
 
 /**
@@ -697,7 +703,114 @@ class GestionTaxis
         }
 
 
+
       }
+
+      /**
+       *
+       */
+      class MultasCuotas
+      	{
+      		private $con;
+      		private $dbhost="localhost";
+      		private $dbuser="asotarsochiqui";
+      		private $dbpass="asotarsoChiqui20!";
+      		private $dbname="asotarsochiqui";
+      		function __construct(){
+      			$this->connect_db();
+      		}
+      		public function connect_db(){
+      			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+      			if(mysqli_connect_error()){
+      				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+      			}
+      		}
+
+      		public function sanitize($var){
+      			$return = mysqli_real_escape_string($this->con, $var);
+      			return $return;
+      		}
+
+      		//metodo de lectura
+
+      		public function verReporteCuotasMensuales(){
+      			$sql = "SELECT * FROM multas WHERE tipo=1 AND Estado_idEstado=1";
+      			$res = mysqli_query($this->con, $sql);
+      			return $res;
+      		}
+
+          public function verReporteMultasOrganizacion(){
+            $sql = "SELECT * FROM multas WHERE tipo=2 AND Estado_idEstado=1";
+            $res = mysqli_query($this->con, $sql);
+            return $res;
+          }
+
+
+        }
+
+
+        /**
+         *
+         */
+        class TaxisPilotosAsignados
+        	{
+        		private $con;
+        		private $dbhost="localhost";
+        		private $dbuser="asotarsochiqui";
+        		private $dbpass="asotarsoChiqui20!";
+        		private $dbname="asotarsochiqui";
+        		function __construct(){
+        			$this->connect_db();
+        		}
+        		public function connect_db(){
+        			$this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+        			if(mysqli_connect_error()){
+        				die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+        			}
+        		}
+
+        		public function sanitize($var){
+        			$return = mysqli_real_escape_string($this->con, $var);
+        			return $return;
+        		}
+
+            public function obtenerUsuario($nombreUsuario){
+            $sql = "SELECT idUsuarios FROM usuarios where nombreusuario='$nombreUsuario'";
+            $res = mysqli_query($this->con, $sql);
+            $return = mysqli_fetch_object($res );
+            return $return ;
+          }
+
+        		//metodo de lectura
+
+        		public function verTaxisAsignados($id_usuario){
+              $sql = "SELECT * FROM socios_has_taxi INNER JOIN taxi ON socios_has_taxi.Taxi_idTaxi = taxi.idTaxi INNER JOIN pilotos ON socios_has_taxi.Pilotos_idPilotos = pilotos.idPilotos WHERE Usuarios_idUsuarios='$id_usuario';";
+        			$res = mysqli_query($this->con, $sql);
+        			return $res;
+        		}
+
+            public function verPilotosAsignados($id_usuario){
+              $sql = "SELECT idPilotos, NombrePilotos, ApellidosPilotos FROM pilotos INNER JOIN socios_has_taxi ON pilotos.idPilotos = socios_has_taxi.Pilotos_idPilotos WHERE Usuarios_idUsuarios='$id_usuario' AND Estado_idEstado=1;";
+              $res = mysqli_query($this->con, $sql);
+              return $res;
+            }
+
+            public function verDetallePiloto($id){
+              $sql = "SELECT * FROM pilotos WHERE idPilotos='$id';";
+              $res = mysqli_query($this->con, $sql);
+              $return = mysqli_fetch_object($res );
+              return $return;
+            }
+
+            public function verDetalleSocio($id){
+                $sql = "SELECT * FROM socios_has_taxi INNER JOIN taxi ON socios_has_taxi.Taxi_idTaxi = taxi.idTaxi INNER JOIN pilotos ON socios_has_taxi.Pilotos_idPilotos = pilotos.idPilotos WHERE Usuarios_idUsuarios='$id';";
+              $res = mysqli_query($this->con, $sql);
+              return $res ;
+            }
+
+        }
+
+
 
 
 
