@@ -20,6 +20,7 @@
                                               <th>Id de la Actividad</th>
                                               <th>Descripcion/Nombre</th>
                                               <th>Fecha</th>
+                                              <th>Hora</th>
                                               <th>Lugar</th>
 
                                           </tr>
@@ -29,6 +30,7 @@
                                             <th>Id de la Actividad</th>
                                             <th>Descripcion/Nombre</th>
                                             <th>Fecha</th>
+                                            <th>Hora</th>
                                             <th>Lugar</th>
                                           </tr>
                                       </tfoot>
@@ -48,6 +50,7 @@
   											$descripcion=$row->DescripcionActividades;
   											$fecha=$row->FechaActividad;
                         $lugar=$row->LugarActividad;
+                        $hora=$row->hora;
 
   									?>
                                           <tr>
@@ -56,6 +59,7 @@
                                               <td><?php echo $descripcion;?></td>
                                               <td><?php echo $fecha;?></td>
                                               <td><?php echo $lugar;?></td>
+                                              <td><?php echo $hora;?></td>
                                           </tr>
                                           <?php
                   												}
