@@ -23,9 +23,9 @@ if($_SESSION["usuario"] === null)
 							$tipo = $_POST['tipo'];
 							$estado = $_POST['estado'];
 
-                            $filename=$_FILES["documento"]["name"];
-                            $ruta=$_FILES["documento"]["tmp_name"]; //nombre temporal
-                            $rutafinal="reportesMensuales"."/".$filename;
+                            $filename=$_FILES['documento']['name'];
+                            $ruta=$_FILES['documento']['tmp_name']; //nombre temporal
+                            $rutafinal='reportesMensuales'.'/'.$filename;
 
                             if (move_uploaded_file($ruta, $rutafinal)) {
 
