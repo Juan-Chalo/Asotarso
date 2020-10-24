@@ -22,9 +22,9 @@ if($_SESSION["usuario"] === null)
 							$descripcion = $_POST['descripcion'];
 							$estado = $_POST['estado'];
 
-                            $filename=$_FILES["documento"]["name"];
-                            $ruta=$_FILES["documento"]["tmp_name"]; //nombre temporal
-                            $rutafinal="reporteFinancieroDirectiva"."/".$filename;
+                            $filename=$_FILES['documento']['name'];
+                            $ruta=$_FILES['documento']['tmp_name']; //nombre temporal
+                            $rutafinal='reporteFinancieroDirectiva/'.$filename;
 
                             if (move_uploaded_file($ruta, $rutafinal)) {
 
