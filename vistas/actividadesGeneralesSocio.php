@@ -20,8 +20,9 @@
                                               <th>Id de la Actividad</th>
                                               <th>Descripcion/Nombre</th>
                                               <th>Fecha</th>
-                                              <th>Hora</th>
                                               <th>Lugar</th>
+                                              <th>Hora</th>
+
 
                                           </tr>
                                       </thead>
@@ -30,8 +31,9 @@
                                             <th>Id de la Actividad</th>
                                             <th>Descripcion/Nombre</th>
                                             <th>Fecha</th>
-                                            <th>Hora</th>
                                             <th>Lugar</th>
+                                            <th>Hora</th>
+
                                           </tr>
                                       </tfoot>
 
