@@ -12,8 +12,9 @@
                     $descripcion = $actividades->sanitize($_POST['descripcion']);
                     $fecha = $actividades->sanitize($_POST['fecha']);
                     $lugar = $actividades->sanitize($_POST['lugar']);
+                    $hora = $actividades->sanitize($_POST['hora']);
                     $id_actividad=intval($_POST['id_actividad']);
-                    $res = $actividades->actualizarActividadGeneral($descripcion,$fecha,$lugar,$id_actividad);
+                    $res = $actividades->actualizarActividadGeneral($descripcion,$fecha,$lugar,$hora,$id_actividad);
                     if($res){
                         echo "<div class='alert alert-success' role='alert'>Actividad Actualizada!</div>";
 
@@ -52,6 +53,12 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <input value="<?php echo $datos_actividad->FechaActividad;?>" type="date" id="fecha" name="fecha" class="form-control" required>
+                                    </div>
+                                </div>
+                                <label for="email_address">Actualizar la Hora de la Actividad?</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input value="<?php echo $datos_actividad->hora;?>" type="text" id="hora  " name="hora" class="form-control" required>
                                     </div>
                                 </div>
                                 <label for="email_address">Actualizar el lugar para la Actividad?</label>

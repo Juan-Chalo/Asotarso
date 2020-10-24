@@ -21,6 +21,7 @@
                                             <th>Descripcion/Nombre</th>
                                             <th>Fecha</th>
                                             <th>Lugar</th>
+                                            <th>Hora</th>
                                             <th>Opcion1</th>
                                             <th>Opcion2</th>
 
@@ -32,6 +33,7 @@
                                           <th>Descripcion/Nombre</th>
                                           <th>Fecha</th>
                                           <th>Lugar</th>
+                                          <th>Hora</th>
                                           <th>Opcion1</th>
                                           <th>Opcion2</th>
 
@@ -53,6 +55,7 @@
 											$descripcion=$row->DescripcionActividades;
 											$fecha=$row->FechaActividad;
                       $lugar=$row->LugarActividad;
+                      $hora=$row->hora;
 
 									?>
                                         <tr>
@@ -61,6 +64,7 @@
                                             <td><?php echo $descripcion;?></td>
                                             <td><?php echo $fecha;?></td>
                                             <td><?php echo $lugar;?></td>
+                                            <td><?php echo $hora;?></td>
                                             <td>
                                             	<a href="editarActividadGeneral.php?id=<?php echo $id;?>" type="button" class="btn btn-info waves-effect">Editar Actividad</a>
                                             </td>

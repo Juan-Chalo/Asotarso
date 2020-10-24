@@ -614,7 +614,7 @@ class GestionTaxis
 
       public function actualizarActividadGeneral($descripcion,$fecha,$lugar,$hora,$id_actividad){
         $sql = "UPDATE actividadesgenerales SET DescripcionActividades='$descripcion', FechaActividad='$fecha',
-        LugarActividad='$lugar' hora='$hora' WHERE idActividades='$id_actividad'";
+        LugarActividad='$lugar', hora='$hora' WHERE idActividades='$id_actividad'";
         $res = mysqli_query($this->con, $sql);
         if($res){
           return true;
