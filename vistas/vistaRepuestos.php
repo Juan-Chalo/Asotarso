@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Lista de Repuestos Activos /REPUESTOS ASOTARSO -CHIQUIMULILLA.
+                                Lista de Repuestos Activos / REPUESTOS ASOTARSO -CHIQUIMULILLA.
                             </h2>
 
                         </div>
@@ -28,7 +28,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <<th>Nombre del Repuesto</th>
+                                            <th>Nombre del Repuesto</th>
                                             <th>Codigo del Producto</th>
                                             <th>Precio del Producto</th>
                                             <th>Categoria</th>
@@ -40,7 +40,7 @@
                                       include ('../Controladores/clasesControladores.php');
                                     	$repuestos = new Producto();
                                     	$listado=$repuestos->leerProducto();
-											?>
+              											?>
 
 
                                     <tbody>
@@ -51,7 +51,6 @@
                                       $precioProducto=$row->precioProducto;
                                       $codigo=$row->codigo;
                                       $existencia=$row->Existencia;
-                                      $Categoria=$row->CategoriaProducto_idCategoriaProducto;
                                       if ($row->CategoriaProducto_idCategoriaProducto == 1) {
                                         $Categoria="Accesorios";
                                       }elseif ($row->CategoriaProducto_idCategoriaProducto == 2) {
@@ -65,7 +64,7 @@
                                       }elseif ($row->CategoriaProducto_idCategoriaProducto == 6) {
                                         $Categoria="Transmisión";
                                       }
-									?>
+									                     ?>
                                         <tr>
                                           <td><?php echo $nombreProducto;?></td>
                                           <td><?php echo $codigo;?></td>
@@ -75,8 +74,8 @@
 
                                         </tr>
                                         <?php
-												}
-											?>
+                    												}
+                    											?>
                                     </tbody>
                                 </table>
                             </div>
