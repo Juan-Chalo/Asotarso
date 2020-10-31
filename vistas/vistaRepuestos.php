@@ -52,6 +52,19 @@
                                       $codigo=$row->codigo;
                                       $existencia=$row->Existencia;
                                       $Categoria=$row->CategoriaProducto_idCategoriaProducto;
+                                      if ($row->CategoriaProducto_idCategoriaProducto == 1) {
+                                        $Categoria="Accesorios";
+                                      }elseif ($row->CategoriaProducto_idCategoriaProducto == 2) {
+                                          $Categoria="Carroceria";
+                                      }elseif ($row->CategoriaProducto_idCategoriaProducto == 3) {
+                                        $Categoria="Frenos";
+                                      }elseif ($row->CategoriaProducto_idCategoriaProducto == 4) {
+                                        $Categoria="Motor";
+                                      }elseif ($row->CategoriaProducto_idCategoriaProducto == 5) {
+                                        $Categoria="Suspención";
+                                      }elseif ($row->CategoriaProducto_idCategoriaProducto == 6) {
+                                        $Categoria="Transmisión";
+                                      }
 									?>
                                         <tr>
                                           <td><?php echo $nombreProducto;?></td>
