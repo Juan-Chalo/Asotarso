@@ -11694,7 +11694,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "Lo Sentimos, No se encontraron registros en la Busqueda :(  )"
+			"sZeroRecords": "Lo Sentimos, No se encontraron registros en la Busqueda :( "
 		},
 
 
