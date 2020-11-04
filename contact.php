@@ -119,7 +119,7 @@
                 $recaptcha = $_POST['g-recaptcha-response'];
                 if ($recaptcha != '') {
                   $secret = "6LfLHt8ZAAAAAOpPaY3u-jVEe9GRsihLKEf_yr9_";
-                  $ip = $server['REMOTE_ADDR'];
+                  $ip = $_SERVER['REMOTE_ADDR'];
                   $var = file_get_content("https://www.google.com/recaptcha/api/siteverify?secrect=$secret&response=$recaptcha&remoteip=$ip");
                   $array = json_decode($var, true);
 
