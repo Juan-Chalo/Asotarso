@@ -117,7 +117,7 @@
               $comentario= new Comentario();
               if(isset($_POST) && !empty($_POST)){
                 $recaptcha = $_POST['g-recaptcha-response'];
-                if ($recaptcha ! = '') {
+                if ($recaptcha != '') {
                   $secret = "6LfLHt8ZAAAAAOpPaY3u-jVEe9GRsihLKEf_yr9_";
                   $ip = $server['REMOTE_ADDR'];
                   $var = file_get_content("https://www.google.com/recaptcha/api/siteverify?secrect=$secret&response=$recaptcha&remoteip=$ip");
