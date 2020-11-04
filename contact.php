@@ -9,6 +9,8 @@
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
+  <script async src="https://www.google.com/recaptcha/api.js"></script>
+
   <!-- Favicons -->
   <link href="assets/img/iconotaxi.ico" rel="icon">
   <link href="assets/img/iconotaxi.ico" rel="apple-touch-icon">
@@ -114,6 +116,15 @@
               include ("Controladores/comentariocontroller.php");
               $comentario= new Comentario();
               if(isset($_POST) && !empty($_POST)){
+                $recaptcha = $_POST['g-recaptcha-response'];
+                if ($recaptcha ! = '') {
+                  $secret = "6LfLHt8ZAAAAAOpPaY3u-jVEe9GRsihLKEf_yr9_";
+                  $ip = $server['REMOTE_ADDR'];
+                  $var = file_get_content("https://www.google.com/recaptcha/api/siteverify?secrect=$secret&response=$recaptcha&remoteip=$ip");
+                  $array = json_decode($var, true);
+
+                  if ($array['success']) {
+
               $nombre = $comentario->sanitize($_POST['nombre']);
               $correo = $comentario->sanitize($_POST['correo']);
               $asunto = $comentario->sanitize($_POST['asunto']);
@@ -126,7 +137,14 @@
               echo "<div class='alert alert-danger' role='alert'>Error al Enviar el Mensaje :(</div>";
               }
 
-              }
+            }else {
+                  echo "<div class='alert alert-danger' role='alert'>Error en la autentificacion :(</div>";
+            }
+
+            }else {
+              echo "<div class='alert alert-danger' role='alert'>Rellene todos los campos :(</div>";
+            }
+          } //if del recaptcha
             ?>
             <form method="post">
               <div class="form-row">
@@ -148,6 +166,7 @@
                 <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escriba su duda,comentario o queja..." required></textarea>
                 <div class="validate"></div>
               </div>
+              <div class="g-recaptcha" data-sitekey="6LfLHt8ZAAAAAHsIziX7HbKPmFcg6uSnct8m9gvz"></div>
               <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
             </form>
 
