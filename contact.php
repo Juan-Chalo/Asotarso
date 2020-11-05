@@ -159,7 +159,7 @@
                 <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escriba su duda,comentario o queja..." required></textarea>
                 <div class="validate"></div>
               </div>
-              <div class="g-recaptcha" data-sitekey="6Lc6Nd8ZAAAAALq0MUgtRFTuRcjQLGsCo6beqcAq"></div>
+              <div class="g-recaptcha" data-sitekey="6Lc6Nd8ZAAAAALq0MUgtRFTuRcjQLGsCo6beqcAq"></div><br>
               <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
             </form>
 
