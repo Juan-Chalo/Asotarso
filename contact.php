@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
 
-
+  <script src="https://www.google.com/recaptcha/api.js"></script>
   <!-- Favicons -->
   <link href="assets/img/iconotaxi.ico" rel="icon">
   <link href="assets/img/iconotaxi.ico" rel="apple-touch-icon">
@@ -262,7 +262,7 @@
     <!-- Js personalizado -->
     <script src="Loginjs/operaciones.js"></script>
 
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
 </body>
 
