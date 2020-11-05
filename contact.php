@@ -116,6 +116,13 @@
               include ("Controladores/comentariocontroller.php");
               $comentario= new Comentario();
               if(isset($_POST) && !empty($_POST)){
+
+                $recaptchat = $_POST['g-recaptcha-response'];
+                if (isset($recaptchat) && $recaptchat) {
+                  $secret = "6Lc6Nd8ZAAAAAH4rK_yaYg8Mus94Kb-YMLgHapdE";
+                  $ip = $_SERVER['REMOTE_ADDR'];
+                  $validation_server = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$recaptchat&remoteip=$ip");
+
               $nombre = $comentario->sanitize($_POST['nombre']);
               $correo = $comentario->sanitize($_POST['correo']);
               $asunto = $comentario->sanitize($_POST['asunto']);
@@ -127,7 +134,10 @@
               }else{
               echo "<div class='alert alert-danger' role='alert'>Error al Enviar el Mensaje :(</div>";
               }
-          } //if del recaptcha
+            }else {
+                echo "<div class='alert alert-danger' role='alert'>Verifique el reCAPTCHA por favor..</div>";
+            }
+          }
             ?>
             <form method="post">
               <div class="form-row">
