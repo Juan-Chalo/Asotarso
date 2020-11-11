@@ -475,6 +475,147 @@ if($_SESSION["usuario"] === null)
                         <!-- #END# Exportable Table -->
 
 
+                        <!-- Exportable Table -->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="card">
+                                                <div class="header">
+                                                    <h2 style="background-color: red; color: white;">
+                                                        SUS PILOTOS CON LICENCIAS A VENCER EN LOS PROXIMOS 10 DIAS
+                                                    </h2>
+                                                </div>
+
+                                                <div class="body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-striped table-hover dataTable">
+                                                            <thead>
+                                                                <tr>
+                                                                  <th>No.Piloto</th>
+                                                                  <th>Nombres</th>
+                                                                  <th>Apellidos</th>
+                                                                  <th>Numero Telefonico</th>
+                                                                  <th>Vencimiento Licencia</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tfoot>
+                                                                <tr>
+                                                                  <th>No.Piloto</th>
+                                                                  <th>Nombres</th>
+                                                                  <th>Apellidos</th>
+                                                                  <th>Numero Telefonico</th>
+                                                                  <th>Vencimiento Licencia</th>
+                                                                </tr>
+                                                            </tfoot>
+
+                                                              <?php
+                                      							$licenciasvencidadasSocio = new FechasVencimientos();
+                                                    $nombreUsuario=$_SESSION["usuario"];
+                                                    $id=$licenciasvencidadasSocio->obtenerUsuario($nombreUsuario);
+                                                    $listado2=$licenciasvencidadasSocio->LicenciasAvencerSocios($id->idUsuarios);
+                                              ?>
+
+
+                                                            <tbody>
+
+                                                              <?php
+                                            while ($row=mysqli_fetch_object($listado2)){
+                                              $id=$row->idPilotos;
+                        											$nombre=$row->NombrePilotos;
+                        											$apellidos=$row->ApellidosPilotos;
+                                              $telefono=$row->Telefono;
+                                              $vencimiento=$row->FechaVencimientoLicencia;
+                                          ?>
+                                                                <tr>
+                                                                  <td><?php echo $id;?></td>
+                                                                  <td><?php echo $nombre;?></td>
+                                                                  <td><?php echo $apellidos;?></td>
+                                                                  <td><?php echo $telefono;?></td>
+                                                                  <td><?php echo $vencimiento;?></td>
+                                                                </tr>
+                                                                <?php
+                                                }
+                                              ?>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- #END# Exportable Table -->
+
+
+                                    <!-- Exportable Table -->
+                                                <div class="row clearfix">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="card">
+                                                            <div class="header">
+                                                                <h2 style="background-color: red; color: white;">
+                                                                    SUS PILOTOS CON ANTECEDENTES A VENCER EN LOS PROXIMOS 10 DIAS
+                                                                </h2>
+                                                            </div>
+
+                                                            <div class="body">
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-bordered table-striped table-hover dataTable">
+                                                                        <thead>
+                                                                            <tr>
+                                                                              <th>No.Piloto</th>
+                                                                              <th>Nombres</th>
+                                                                              <th>Apellidos</th>
+                                                                              <th>Numero Telefonico</th>
+                                                                              <th>Vencimiento ANTECEDENTES</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tfoot>
+                                                                            <tr>
+                                                                              <th>No.Piloto</th>
+                                                                              <th>Nombres</th>
+                                                                              <th>Apellidos</th>
+                                                                              <th>Numero Telefonico</th>
+                                                                              <th>Vencimiento ANTECEDENTES</th>
+                                                                            </tr>
+                                                                        </tfoot>
+
+                                                                          <?php
+                                                  							$antecedentesvencidadasSocio = new FechasVencimientos();
+                                                                $nombreUsuario=$_SESSION["usuario"];
+                                                                $id=$antecedentesvencidadasSocio->obtenerUsuario($nombreUsuario);
+                                                                $listado3=$antecedentesvencidadasSocio->AntecedentesAvencerSocios($id->idUsuarios);
+                                                          ?>
+
+
+                                                                        <tbody>
+
+                                                                          <?php
+                                                        while ($row=mysqli_fetch_object($listado3)){
+                                                          $id=$row->idPilotos;
+                                    											$nombre=$row->NombrePilotos;
+                                    											$apellidos=$row->ApellidosPilotos;
+                                                          $telefono=$row->Telefono;
+                                                          $vencimiento=$row->FechaVencimientoAntecedentes;
+                                                      ?>
+                                                                            <tr>
+                                                                              <td><?php echo $id;?></td>
+                                                                              <td><?php echo $nombre;?></td>
+                                                                              <td><?php echo $apellidos;?></td>
+                                                                              <td><?php echo $telefono;?></td>
+                                                                              <td><?php echo $vencimiento;?></td>
+                                                                            </tr>
+                                                                            <?php
+                                                            }
+                                                          ?>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- #END# Exportable Table -->
+
+
+
         </div>
     </section>
 

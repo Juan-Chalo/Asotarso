@@ -185,11 +185,6 @@
 		}
 
 
-
-
-
-
-
 }
 
 
@@ -198,8 +193,6 @@
  // $connect = mysqli_connect("localhost","root","","asotarsochiqui");
 
   $connect = mysqli_connect("localhost","asotarsochiqui","asotarsoChiqui20!","asotarsochiqui");
-
-
 
   /**
    *
@@ -262,7 +255,70 @@
 }
 
 
+}
+
+/**
+ *
+ */
+class FechasVencimientos
+{
+
+  private $con;
+  private $dbhost="localhost";
+  private $dbuser="asotarsochiqui";
+  private $dbpass="asotarsoChiqui20!";
+  private $dbname="asotarsochiqui";
+  function __construct(){
+    $this->connect_db();
   }
+
+  public function connect_db(){
+    $this->con = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+    if(mysqli_connect_error()){
+      die("Conexión a la base de datos falló " . mysqli_connect_error() . mysqli_connect_errno());
+    }
+  }
+
+  public function VerLicenciasAvencer(){
+    $sql = "SELECT * FROM pilotos WHERE FechaVencimientoLicencia BETWEEN curdate() AND date_add(curdate(), interval 10 day)";
+    $res = mysqli_query($this->con, $sql);
+    return $res;
+  }
+
+  public function VerAntecedentesAvencer(){
+    $sql = "SELECT * FROM pilotos WHERE FechaVencimientoAntecedentes BETWEEN curdate() AND date_add(curdate(), interval 10 day)";
+    $res = mysqli_query($this->con, $sql);
+    return $res;
+  }
+
+
+  public function obtenerUsuario($nombreUsuario){
+  $sql = "SELECT idUsuarios FROM usuarios where nombreusuario='$nombreUsuario'";
+  $res = mysqli_query($this->con, $sql);
+  $return = mysqli_fetch_object($res );
+  return $return ;
+}
+
+  public function LicenciasAvencerSocios($id){
+    $sql = "SELECT * FROM pilotos INNER JOIN socios_has_taxi ON pilotos.idPilotos = socios_has_taxi.Pilotos_idPilotos WHERE FechaVencimientoLicencia BETWEEN curdate() AND date_add(curdate(), interval 10 day) AND Usuarios_idUsuarios='$id'";
+    $res = mysqli_query($this->con, $sql);
+    return $res;
+  }
+
+  public function AntecedentesAvencerSocios($id){
+    $sql = "SELECT * FROM pilotos INNER JOIN socios_has_taxi ON pilotos.idPilotos = socios_has_taxi.Pilotos_idPilotos WHERE FechaVencimientoAntecedentes BETWEEN curdate() AND date_add(curdate(), interval 10 day) AND Usuarios_idUsuarios='$id'";
+    $res = mysqli_query($this->con, $sql);
+    return $res;
+  }
+
+
+
+
+
+
+
+}
+
 
 
   /**

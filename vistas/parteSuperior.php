@@ -129,6 +129,18 @@ if($_SESSION["usuario"] === null)
                         </a>
                     </li>
                     <li>
+                        <a href="vencimientoLicencias.php">
+                            <i class="material-icons">update</i>
+                            <span>Vencimiento Licencias</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="vencimientoAntecedentes.php">
+                            <i class="material-icons">update</i>
+                            <span>Vencimiento Antecedentes</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="usuarios.php">
                             <i class="material-icons">assignment</i>
                             <span>Gestion de Usuarios</span>
