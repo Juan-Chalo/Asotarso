@@ -143,7 +143,7 @@ if($_SESSION["usuario"] === null)
                     <li>
                         <a href="usuarios.php">
                             <i class="material-icons">assignment</i>
-                            <span>Gestion de Usuarios</span>
+                            <span>Gestión de Usuarios</span>
                         </a>
                     </li>
                     <li>
@@ -161,7 +161,7 @@ if($_SESSION["usuario"] === null)
                                         <a href="agregarMultaMes.php">Cuotas Mensuales</a>
                                     </li>
                                     <li>
-                                        <a href="agregarMultaOrganizacion.php">Multas Organiacion</a>
+                                        <a href="agregarMultaOrganizacion.php">Multas Organización</a>
                                     </li>
                                 </ul>
                             </li>
@@ -173,7 +173,7 @@ if($_SESSION["usuario"] === null)
                      <li>
                         <a href="gestionSocios.php">
                             <i class="material-icons">assignment</i>
-                            <span>Gestion de Socios</span>
+                            <span>Gestión de Socios</span>
                         </a>
                     </li>
                    <li>
@@ -203,7 +203,7 @@ if($_SESSION["usuario"] === null)
                     <li>
                       <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">pie_chart</i>
-                          <span>Gestion de Taxis</span>
+                          <span>Gestión de Taxis</span>
                       </a>
                       <ul class="ml-menu">
                           <li>
@@ -304,7 +304,7 @@ if($_SESSION["usuario"] === null)
                   <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">donut_large</i>
-                        <span>Asignacion Socio-Taxi-Piloto</span>
+                        <span>Asignación Socio-Taxi-Piloto</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
@@ -316,7 +316,7 @@ if($_SESSION["usuario"] === null)
                                     <a href="listaTaxisPilotosSocio.php">Lista de Asignaciones</a>
                                 </li>
                                 <li>
-                                    <a href="asignarTaxiPilotoSocio.php">Nueva Asignacion</a>
+                                    <a href="asignarTaxiPilotoSocio.php">Nueva Asignación</a>
                                 </li>
                             </ul>
                         </li>
@@ -360,7 +360,7 @@ if($_SESSION["usuario"] === null)
                     &copy; 2020 <a href="javascript:void(0);">Asotarso - Chiquimulilla </a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 0.0.1
+                    <b>Versión: </b> 0.0.1
                 </div>
                 <div class="version">
                     <b>Creado por:</b>SoftwareSolutions

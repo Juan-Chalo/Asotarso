@@ -143,7 +143,7 @@ if($_SESSION["usuario"] === null)
                                         <a href="cuotasMensualesSocio.php">Ver R. Cuotas Mensuales</a>
                                     </li>
                                     <li>
-                                        <a href="multasOrganizacionSocio.php">Ver R. Multas Organiacion</a>
+                                        <a href="multasOrganizacionSocio.php">Ver R. Multas Organiación</a>
                                     </li>
                                 </ul>
                             </li>
@@ -154,7 +154,7 @@ if($_SESSION["usuario"] === null)
                     <li>
                       <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">pie_chart</i>
-                          <span>Gestion de Taxis</span>
+                          <span>Gestión de Taxis</span>
                       </a>
                       <ul class="ml-menu">
                           <li>
@@ -261,7 +261,7 @@ if($_SESSION["usuario"] === null)
                     &copy; 2020 <a href="javascript:void(0);">Asotarso - Chiquimulilla / Socios</a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 0.0.1
+                    <b>Versión: </b> 0.0.1
                 </div>
                 <div class="version">
                     <b>Creado por:</b>SoftwareSolutions
