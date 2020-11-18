@@ -189,10 +189,7 @@
             <h4>Nuestro Sitio</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.html">Inicio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#actividades">Actividades</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="team.html">Pilotos</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contactenos</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="login.html">Iniciar Sesion</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="login.php">Iniciar Sesion</a></li>
             </ul>
           </div>
 

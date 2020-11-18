@@ -92,7 +92,7 @@
               <div class="address">
                 <i class="icofont-google-map"></i>
                 <h4>Direccion:</h4>
-                <p>*Direccion de la oficina*</p>
+                <p>Avenida ingreso,a pocos metros de Susuki, Chiquimulilla S.R</p>
               </div>
 
               <div class="email">
@@ -200,7 +200,6 @@
             <h4>Nuestro Sitio</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.html">Inicio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#actividades">Actividades</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contactenos</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="login.php">Iniciar Sesion</a></li>
             </ul>
