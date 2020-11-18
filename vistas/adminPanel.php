@@ -41,22 +41,7 @@ if($_SESSION["usuario"] === null)
 </head>
 
 <body class="theme-red">
-    <!-- Page Loader -->
-    <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>CARGANDO...</p>
-        </div>
-    </div>
+  
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -377,7 +362,7 @@ if($_SESSION["usuario"] === null)
         </aside>
         <!-- #END# Left Sidebar -->
         <!-- Right Sidebar -->
-        <aside id="rightsidebar" class="right-sidebar">
+      <!--  <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">Colores</a></li>
             </ul>
@@ -501,7 +486,7 @@ if($_SESSION["usuario"] === null)
                 </div>
             </div>
         </aside>
-        <!-- #END# Right Sidebar -->
+         #END# Right Sidebar -->
     </section>
 
     <section class="content">
