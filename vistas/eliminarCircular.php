@@ -5,7 +5,7 @@ if (isset($_GET['id'])){
 	$id=intval($_GET['id']);
 	$res = $circular->borrarCircular($id);
 	if($res){
-		header('location: AdminPanel.php');
+		header('location: adminPanel.php');
 	}else{
 		echo "Error al eliminar la Circular";
 	}
