@@ -41,7 +41,7 @@ if($_SESSION["usuario"] === null)
 </head>
 
 <body class="theme-red">
-  
+
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -1028,9 +1028,6 @@ if($_SESSION["usuario"] === null)
     <!-- Bootstrap Core Js -->
     <script src=" ../plugins/bootstrap/js/bootstrap.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src=" ../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
     <!-- Slimscroll Plugin Js -->
     <script src=" ../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
@@ -1047,6 +1044,21 @@ if($_SESSION["usuario"] === null)
     <!-- ChartJs -->
     <script src=" ../plugins/chartjs/Chart.bundle.js"></script>
 
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="../plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src=" ../js/admin.js"></script>
+    <script src=" ../js/pages/tables/jquery-datatable.js"></script>
+
     <!-- Flot Charts Plugin Js -->
     <script src=" ../plugins/flot-charts/jquery.flot.js"></script>
     <script src=" ../plugins/flot-charts/jquery.flot.resize.js"></script>
@@ -1059,24 +1071,8 @@ if($_SESSION["usuario"] === null)
 
     <!-- Custom Js -->
     <script src=" ../js/pages/index.js"></script>
-
     <!-- Demo Js -->
     <script src=" ../js/demo.js"></script>
-
-    <!-- Jquery DataTable Plugin Js -->
-    <script src=" ../plugins/jquery-datatable/jquery.dataTables.js"></script>
-    <script src=" ../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src=" ../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src=" ../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src=" ../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src=" ../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src=" ../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src=" ../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src=" ../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
-    <!-- Custom Js -->
-    <script src=" ../js/admin.js"></script>
-    <script src=" ../js/pages/tables/jquery-datatable.js"></script>
 </body>
 
 </html>
